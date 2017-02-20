@@ -9,6 +9,10 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    
+    @IBOutlet weak var leftPanel : NSView?
+    @IBOutlet weak var centerPanel : NSView?
+    @IBOutlet weak var rightPanel : NSView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +25,8 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
+    
+    
 
 
 }

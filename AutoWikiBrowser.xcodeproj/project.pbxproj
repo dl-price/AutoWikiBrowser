@@ -13,6 +13,7 @@
 		379970B61E5AF6BE0086B3D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379970B41E5AF6BE0086B3D9 /* Main.storyboard */; };
 		379970C11E5AF6BE0086B3D9 /* AutoWikiBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379970C01E5AF6BE0086B3D9 /* AutoWikiBrowserTests.swift */; };
 		379970CC1E5AF6BE0086B3D9 /* AutoWikiBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379970CB1E5AF6BE0086B3D9 /* AutoWikiBrowserUITests.swift */; };
+		379970DA1E5AFC220086B3D9 /* MediaWiki.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379970D91E5AFC220086B3D9 /* MediaWiki.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		379970C71E5AF6BE0086B3D9 /* AutoWikiBrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoWikiBrowserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		379970CB1E5AF6BE0086B3D9 /* AutoWikiBrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoWikiBrowserUITests.swift; sourceTree = "<group>"; };
 		379970CD1E5AF6BE0086B3D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		379970D91E5AFC220086B3D9 /* MediaWiki.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaWiki.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				379970AE1E5AF6BE0086B3D9 /* AppDelegate.swift */,
+				379970D91E5AFC220086B3D9 /* MediaWiki.swift */,
 				379970B01E5AF6BE0086B3D9 /* ViewController.swift */,
 				379970B21E5AF6BE0086B3D9 /* Assets.xcassets */,
 				379970B41E5AF6BE0086B3D9 /* Main.storyboard */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				379970B11E5AF6BE0086B3D9 /* ViewController.swift in Sources */,
+				379970DA1E5AFC220086B3D9 /* MediaWiki.swift in Sources */,
 				379970AF1E5AF6BE0086B3D9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
