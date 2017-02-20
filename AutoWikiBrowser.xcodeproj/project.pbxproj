@@ -14,6 +14,7 @@
 		379970C11E5AF6BE0086B3D9 /* AutoWikiBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379970C01E5AF6BE0086B3D9 /* AutoWikiBrowserTests.swift */; };
 		379970CC1E5AF6BE0086B3D9 /* AutoWikiBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379970CB1E5AF6BE0086B3D9 /* AutoWikiBrowserUITests.swift */; };
 		379970DA1E5AFC220086B3D9 /* MediaWiki.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379970D91E5AFC220086B3D9 /* MediaWiki.swift */; };
+		379970DC1E5B53060086B3D9 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379970DB1E5B53060086B3D9 /* MainWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		379970CB1E5AF6BE0086B3D9 /* AutoWikiBrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoWikiBrowserUITests.swift; sourceTree = "<group>"; };
 		379970CD1E5AF6BE0086B3D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		379970D91E5AFC220086B3D9 /* MediaWiki.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaWiki.swift; sourceTree = "<group>"; };
+		379970DB1E5B53060086B3D9 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				379970B21E5AF6BE0086B3D9 /* Assets.xcassets */,
 				379970B41E5AF6BE0086B3D9 /* Main.storyboard */,
 				379970B71E5AF6BE0086B3D9 /* Info.plist */,
+				379970DB1E5B53060086B3D9 /* MainWindow.swift */,
 			);
 			path = AutoWikiBrowser;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				379970DC1E5B53060086B3D9 /* MainWindow.swift in Sources */,
 				379970B11E5AF6BE0086B3D9 /* ViewController.swift in Sources */,
 				379970DA1E5AFC220086B3D9 /* MediaWiki.swift in Sources */,
 				379970AF1E5AF6BE0086B3D9 /* AppDelegate.swift in Sources */,

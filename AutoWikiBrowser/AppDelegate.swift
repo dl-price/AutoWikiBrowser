@@ -21,6 +21,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         thing.title = "Category:Medicine"
         thing.limit = 200
         MWInstance.defaultInstance.doQuery(thing)
+        
+    
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

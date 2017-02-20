@@ -663,7 +663,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController id="B8D-0N-5wS" customClass="MainWindow" customModule="AutoWikiBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -671,10 +671,26 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
+                        <outlet property="toolbar" destination="h8K-eP-Qxd" id="Qkq-5e-TUq"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <toolbar implicitIdentifier="09D11707-F4A3-4FD5-970E-AC5832E91C2B" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="h8K-eP-Qxd">
+                    <allowedToolbarItems>
+                        <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="xhd-i3-DXO"/>
+                        <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="hjE-KX-UoL"/>
+                        <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="zI2-uV-Q6w"/>
+                        <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="aWU-G3-LNK"/>
+                        <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Q5q-NO-bMH"/>
+                    </allowedToolbarItems>
+                    <defaultToolbarItems>
+                        <toolbarItem reference="xhd-i3-DXO"/>
+                        <toolbarItem reference="hjE-KX-UoL"/>
+                        <toolbarItem reference="Q5q-NO-bMH"/>
+                        <toolbarItem reference="zI2-uV-Q6w"/>
+                    </defaultToolbarItems>
+                </toolbar>
             </objects>
             <point key="canvasLocation" x="95.5" y="254"/>
         </scene>
@@ -693,17 +709,23 @@
                                     <customView identifier="Left Panel" fixedFrame="YES" id="1DR-GI-Huo">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="404"/>
                                         <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <visualEffectView appearanceType="vibrantLight" fixedFrame="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="T4E-bb-MgV">
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="404"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </visualEffectView>
+                                        </subviews>
                                     </customView>
                                     <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="thin" id="Bai-iC-haG">
-                                        <rect key="frame" x="141" y="0.0" width="254.5" height="404"/>
+                                        <rect key="frame" x="141" y="0.0" width="255" height="404"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
                                             <customView fixedFrame="YES" id="gXS-ng-Cql">
-                                                <rect key="frame" x="0.0" y="0.0" width="254.5" height="197"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="255" height="197"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </customView>
                                             <customView fixedFrame="YES" id="pt2-b0-d1Y">
-                                                <rect key="frame" x="0.0" y="198" width="254.5" height="206"/>
+                                                <rect key="frame" x="0.0" y="198" width="255" height="206"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </customView>
                                         </subviews>
@@ -713,7 +735,7 @@
                                         </holdingPriorities>
                                     </splitView>
                                     <customView fixedFrame="YES" id="VKw-48-aGa">
-                                        <rect key="frame" x="396.5" y="0.0" width="135.5" height="404"/>
+                                        <rect key="frame" x="397" y="0.0" width="135" height="404"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </customView>
                                 </subviews>
