@@ -19,7 +19,8 @@ class MainWindow : NSWindowController, NSToolbarDelegate {
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        toolbar = NSToolbar()
+        window!.toolbar = toolbar
+        window!.titleVisibility = .hidden
     }
     
     func toolbar(_ toolbar: NSToolbar, itemForItemIdentifier itemIdentifier: String, willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem? {
