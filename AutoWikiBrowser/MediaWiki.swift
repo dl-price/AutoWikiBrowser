@@ -21,7 +21,12 @@ class MWInstance {
                 NSLog(error.debugDescription)
             }
             else {
-                NSLog(String.init(data: data!, encoding: String.Encoding.utf8)!)
+                let yes = String.init(data: data!, encoding: String.Encoding.utf8)!
+                
+                NSLog(yes)
+                
+                var hello : Int
+                
             }
         }
         task.resume()

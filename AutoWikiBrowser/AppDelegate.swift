@@ -18,8 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let thing = MWCategoryMembers()
         
-        thing.title = "Category:Medicine"
-        thing.limit = 200
+        thing.title = "Category:Medical_terminology"
+        thing.limit = 400
         MWInstance.defaultInstance.doQuery(thing)
         
     

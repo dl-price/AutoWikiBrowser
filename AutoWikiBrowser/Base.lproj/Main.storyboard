@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="11762"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -665,34 +666,31 @@
             <objects>
                 <windowController id="B8D-0N-5wS" customClass="MainWindow" customModule="AutoWikiBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="521" height="278"/>
+                        <rect key="contentRect" x="196" y="240" width="635" height="278"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="6E82E155-63D0-40A4-8339-4F1203E99B16" displayMode="iconAndLabel" sizeMode="regular" id="eN2-MC-k3N">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="f50-hg-Lw8"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="qmo-On-LJI"/>
+                                <toolbarItem implicitItemIdentifier="B6D11150-1F54-46EC-BC82-AFA93FE36EA1" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" image="LeftNav" id="lOU-ar-nt9"/>
+                                <toolbarItem implicitItemIdentifier="3D375C0D-09FC-4CBB-AAEF-ACCAF0323814" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" image="BottomNav" id="1dx-OC-Bq0"/>
+                                <toolbarItem implicitItemIdentifier="13F5DCB3-7CDD-4F46-B037-9B60504F2620" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" image="RightNav" id="Ttx-zV-9aa"/>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems/>
+                            <connections>
+                                <outlet property="delegate" destination="IQv-IB-iLA" id="SQX-Yj-08x"/>
+                            </connections>
+                        </toolbar>
                     </window>
                     <connections>
-                        <outlet property="toolbar" destination="h8K-eP-Qxd" id="Qkq-5e-TUq"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <toolbar implicitIdentifier="09D11707-F4A3-4FD5-970E-AC5832E91C2B" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="h8K-eP-Qxd">
-                    <allowedToolbarItems>
-                        <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="xhd-i3-DXO"/>
-                        <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="hjE-KX-UoL"/>
-                        <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="zI2-uV-Q6w"/>
-                        <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="aWU-G3-LNK"/>
-                        <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Q5q-NO-bMH"/>
-                    </allowedToolbarItems>
-                    <defaultToolbarItems>
-                        <toolbarItem reference="xhd-i3-DXO"/>
-                        <toolbarItem reference="hjE-KX-UoL"/>
-                        <toolbarItem reference="Q5q-NO-bMH"/>
-                        <toolbarItem reference="zI2-uV-Q6w"/>
-                    </defaultToolbarItems>
-                </toolbar>
             </objects>
-            <point key="canvasLocation" x="95.5" y="254"/>
+            <point key="canvasLocation" x="152.5" y="254"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -723,6 +721,15 @@
                                             <customView fixedFrame="YES" id="gXS-ng-Cql">
                                                 <rect key="frame" x="0.0" y="0.0" width="255" height="197"/>
                                                 <autoresizingMask key="autoresizingMask"/>
+                                                <subviews>
+                                                    <webView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMb-oL-vk5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="255" height="197"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
+                                                            <nil key="identifier"/>
+                                                        </webPreferences>
+                                                    </webView>
+                                                </subviews>
                                             </customView>
                                             <customView fixedFrame="YES" id="pt2-b0-d1Y">
                                                 <rect key="frame" x="0.0" y="198" width="255" height="206"/>
@@ -751,6 +758,7 @@
                         <outlet property="centerPanel" destination="Bai-iC-haG" id="Ygd-eB-gzl"/>
                         <outlet property="leftPanel" destination="1DR-GI-Huo" id="nhW-hS-A8T"/>
                         <outlet property="rightPanel" destination="VKw-48-aGa" id="ub1-mj-3a7"/>
+                        <outlet property="webView" destination="bMb-oL-vk5" id="SfG-6P-HVl"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -758,4 +766,9 @@
             <point key="canvasLocation" x="121" y="709"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BottomNav" width="50" height="50"/>
+        <image name="LeftNav" width="50" height="50"/>
+        <image name="RightNav" width="50" height="50"/>
+    </resources>
 </document>
