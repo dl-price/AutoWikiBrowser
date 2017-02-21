@@ -8,6 +8,7 @@
 
 import Foundation
 import AppKit
+import WebKit
 
 class MainWindowController : NSWindowController, NSToolbarDelegate {
     @IBOutlet var toolbar : NSToolbar!
@@ -22,5 +23,9 @@ class MainWindowController : NSWindowController, NSToolbarDelegate {
         window!.toolbar = toolbar
         window!.titleVisibility = .hidden
     }
+    
+}
+
+class WikiWebView : WebView {
     
 }

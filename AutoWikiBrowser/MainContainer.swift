@@ -12,26 +12,7 @@ import WebKit
 
 class MainContainer : NSView {
     
-    let mainContainerController : MainContainerController
-    
-    required init?(coder: NSCoder) {
-        mainContainerController = MainContainerController(coder: coder)!
-        super.init(coder: coder)
-        
-        addSubview(mainContainerController.splitView)
-        
-        mainContainerController.splitView.addSubview(WebView())
-        mainContainerController.splitView.addSubview(WebView())
-    }
 
-}
-
-class MainContainerController : NSSplitViewController {
-    
-
-    
-
-    
 
 }
 
