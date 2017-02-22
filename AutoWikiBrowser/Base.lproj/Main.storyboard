@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="11762"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -64,6 +63,11 @@
                                         <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
                                             <connections>
                                                 <action selector="newDocument:" target="Ady-hI-5gd" id="4Si-XN-c54"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="New Tab" keyEquivalent="t" id="fbW-uA-N3W">
+                                            <connections>
+                                                <action selector="newTab:" target="Ady-hI-5gd" id="6s8-N6-H40"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
@@ -664,8 +668,8 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" customClass="MainWindowController" customModule="AutoWikiBrowser" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="preferred" id="IQv-IB-iLA">
+                <windowController storyboardIdentifier="MainWindowController" id="B8D-0N-5wS" customClass="MainWindowController" customModule="AutoWikiBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" identifier="MainWindow" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="preferred" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="448" height="278"/>
@@ -737,90 +741,12 @@
                                         <rect key="frame" x="29" y="0.0" width="801" height="691"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
-                                            <customView fixedFrame="YES" id="gXS-ng-Cql" customClass="MainContainer" customModule="AutoWikiBrowser" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="801" height="656"/>
+                                            <containerView fixedFrame="YES" id="Fl4-YS-FoB">
+                                                <rect key="frame" x="0.0" y="0.0" width="801" height="272.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
-                                                <subviews>
-                                                    <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" translatesAutoresizingMaskIntoConstraints="NO" id="Oku-Gt-BhB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="801" height="656"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                        <subviews>
-                                                            <customView fixedFrame="YES" id="XqA-QM-Ct7">
-                                                                <rect key="frame" x="0.0" y="0.0" width="801" height="316"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                <subviews>
-                                                                    <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N7K-sw-XE2">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="801" height="316"/>
-                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                        <subviews>
-                                                                            <customView fixedFrame="YES" id="5vU-Nh-8oB">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="398" height="316"/>
-                                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                                <subviews>
-                                                                                    <webView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nbH-GB-E1H" customClass="WikiWebView" customModule="AutoWikiBrowser" customModuleProvider="target">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="316"/>
-                                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                                        <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
-                                                                                            <nil key="identifier"/>
-                                                                                        </webPreferences>
-                                                                                    </webView>
-                                                                                </subviews>
-                                                                            </customView>
-                                                                            <customView fixedFrame="YES" id="nrZ-Dw-vue">
-                                                                                <rect key="frame" x="408" y="0.0" width="393" height="316"/>
-                                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                            </customView>
-                                                                        </subviews>
-                                                                        <holdingPriorities>
-                                                                            <real value="250"/>
-                                                                            <real value="250"/>
-                                                                        </holdingPriorities>
-                                                                    </splitView>
-                                                                </subviews>
-                                                            </customView>
-                                                            <customView fixedFrame="YES" id="nbx-ge-jWG">
-                                                                <rect key="frame" x="0.0" y="326" width="801" height="330"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                <subviews>
-                                                                    <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v3W-hN-fRn">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="801" height="330"/>
-                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                        <subviews>
-                                                                            <customView fixedFrame="YES" id="lX5-xC-IpQ" customClass="MainContainer" customModule="AutoWikiBrowser" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="398" height="330"/>
-                                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                                <subviews>
-                                                                                    <webView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JlK-aA-B4P" customClass="WikiWebView" customModule="AutoWikiBrowser" customModuleProvider="target">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="330"/>
-                                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                                        <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
-                                                                                            <nil key="identifier"/>
-                                                                                        </webPreferences>
-                                                                                    </webView>
-                                                                                </subviews>
-                                                                            </customView>
-                                                                            <customView fixedFrame="YES" id="7Q1-ee-ZiX">
-                                                                                <rect key="frame" x="408" y="0.0" width="393" height="330"/>
-                                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                            </customView>
-                                                                        </subviews>
-                                                                        <holdingPriorities>
-                                                                            <real value="250"/>
-                                                                            <real value="250"/>
-                                                                        </holdingPriorities>
-                                                                    </splitView>
-                                                                </subviews>
-                                                            </customView>
-                                                        </subviews>
-                                                        <holdingPriorities>
-                                                            <real value="250"/>
-                                                            <real value="250"/>
-                                                        </holdingPriorities>
-                                                    </splitView>
-                                                </subviews>
-                                            </customView>
+                                            </containerView>
                                             <customView fixedFrame="YES" id="pt2-b0-d1Y">
-                                                <rect key="frame" x="0.0" y="657" width="801" height="34"/>
+                                                <rect key="frame" x="0.0" y="273.5" width="801" height="417.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </customView>
                                         </subviews>
@@ -845,9 +771,8 @@
                     <connections>
                         <outlet property="centerPanel" destination="Bai-iC-haG" id="Ygd-eB-gzl"/>
                         <outlet property="leftPanel" destination="1DR-GI-Huo" id="nhW-hS-A8T"/>
+                        <outlet property="panelSplit" destination="1ZT-KM-Qyz" id="WHX-ls-HAD"/>
                         <outlet property="rightPanel" destination="VKw-48-aGa" id="ub1-mj-3a7"/>
-                        <outlet property="webA" destination="nbH-GB-E1H" id="kwC-2P-oK5"/>
-                        <outlet property="webB" destination="JlK-aA-B4P" id="2gV-bJ-HGW"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

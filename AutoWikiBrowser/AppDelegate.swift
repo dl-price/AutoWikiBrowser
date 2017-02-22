@@ -22,6 +22,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         thing.limit = 400
         MWInstance.defaultInstance.doQuery(thing)
         
+        
+        
     
     }
 
@@ -31,6 +33,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true;
+    }
+    
+    @IBAction func newTab(_ sender: Any) {
+            let a = NSApplication.shared().mainWindow?.contentViewController?.storyboard?.instantiateController(withIdentifier: "MainWindowController") as! MainWindowController
+            
+            NSApplication.shared().mainWindow?.addTabbedWindow(a.window!, ordered: .below)
+        
     }
 
 

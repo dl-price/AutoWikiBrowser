@@ -17,6 +17,7 @@
 		379970DA1E5AFC220086B3D9 /* MediaWiki.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379970D91E5AFC220086B3D9 /* MediaWiki.swift */; };
 		379970DC1E5B53060086B3D9 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379970DB1E5B53060086B3D9 /* MainWindowController.swift */; };
 		379970DE1E5B60280086B3D9 /* MWWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379970DD1E5B60280086B3D9 /* MWWebView.swift */; };
+		37D542FD1E5D564D002218A1 /* MainContainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37D542FC1E5D564D002218A1 /* MainContainer.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		379970D91E5AFC220086B3D9 /* MediaWiki.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaWiki.swift; sourceTree = "<group>"; };
 		379970DB1E5B53060086B3D9 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		379970DD1E5B60280086B3D9 /* MWWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWWebView.swift; sourceTree = "<group>"; };
+		37D542FC1E5D564D002218A1 /* MainContainer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainContainer.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				379970DD1E5B60280086B3D9 /* MWWebView.swift */,
 				379970B21E5AF6BE0086B3D9 /* Assets.xcassets */,
 				379970B41E5AF6BE0086B3D9 /* Main.storyboard */,
+				37D542FC1E5D564D002218A1 /* MainContainer.storyboard */,
 				379970B71E5AF6BE0086B3D9 /* Info.plist */,
 				379970DB1E5B53060086B3D9 /* MainWindowController.swift */,
 				3773393F1E5C713200426E14 /* MainContainer.swift */,
@@ -246,6 +249,7 @@
 			files = (
 				379970B31E5AF6BE0086B3D9 /* Assets.xcassets in Resources */,
 				379970B61E5AF6BE0086B3D9 /* Main.storyboard in Resources */,
+				37D542FD1E5D564D002218A1 /* MainContainer.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

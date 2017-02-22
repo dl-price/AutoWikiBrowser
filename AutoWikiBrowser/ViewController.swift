@@ -9,8 +9,9 @@
 import Cocoa
 import WebKit
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, NSSplitViewDelegate {
     
+    @IBOutlet weak var panelSplit : NSSplitView?
     @IBOutlet weak var leftPanel : NSView?
     @IBOutlet weak var centerPanel : NSView?
     @IBOutlet weak var rightPanel : NSView?
@@ -26,10 +27,9 @@ class ViewController: NSViewController {
         
         let a = storyboard?.instantiateController(withIdentifier: "LeftPanelController") as! NSViewController
         leftPanel?.addSubview(a.view)
-        
-        a.view.setFrameSize(leftPanel!.frame.size)
-        
+
         a.view.layer?.backgroundColor = NSColor.green.cgColor
+        panelSplit?.delegate = self
 
     }
 
@@ -38,6 +38,11 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
+    
+    func splitViewDidResizeSubviews(_ notification: Notification) {
+        leftPanel?.subviews[0].setFrameSize((leftPanel?.frame.size)!)
+    }
+
 }
 
 extension NSToolbarItem {
