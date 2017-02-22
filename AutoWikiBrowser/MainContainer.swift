@@ -62,28 +62,15 @@ class MainContainerController : NSViewController {
         return nil
     }
     
-    var splitItem : [NSView?] {
-        get {
-            var array = [NSView?]()
-            
-            /*array.append(((childViewControllers[0] as! NSSplitViewController).splitViewItems[0].viewController.view as! NSSplitView).subviews[0])
-            array.append(((childViewControllers[0] as! NSSplitViewController).splitViewItems[0].viewController.view as! NSSplitView).subviews[1])
-            array.append(((childViewControllers[0] as! NSSplitViewController).splitViewItems[1].viewController.view as! NSSplitView).subviews[0])
-            array.append(((childViewControllers[0] as! NSSplitViewController).splitViewItems[1].viewController.view as! NSSplitView).subviews[1])*/
-            
-            return array
-        }
-    }
-    
     override func viewDidLoad() {
         mainSplitController?.view.translatesAutoresizingMaskIntoConstraints = true
         for index in 0...1 {
-            var new = NSSplitViewController()
+            let new = NSSplitViewController()
             new.view.translatesAutoresizingMaskIntoConstraints = true
             mainSplitController!.addChildViewController(new)
         
             for _ in 0...1 {
-                var new2 = storyboard!.instantiateController(withIdentifier: "BasicSnippet") as! NSViewController
+                let new2 = storyboard!.instantiateController(withIdentifier: "BasicSnippet") as! NSViewController
                 new2.view.translatesAutoresizingMaskIntoConstraints = true
                 mainSplitController!.childViewControllers[index].addChildViewController( new2 ) }
         
@@ -93,14 +80,14 @@ class MainContainerController : NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        //mainSplitController?.splitViewItems[1].isCollapsed = true
-        //(mainSplitController?.childViewControllers[0] as? NSSplitViewController)?.splitViewItems[1].animator().isCollapsed = true
+        mainSplitController?.splitViewItems[1].isCollapsed = true
+        (mainSplitController?.childViewControllers[0] as? NSSplitViewController)?.splitViewItems[1].animator().isCollapsed = true
     }
     
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        var parse = MWParseQuery()
+        /*var parse = MWParseQuery()
         
         parse.page = "Main_Page"
         
@@ -118,7 +105,7 @@ class MainContainerController : NSViewController {
             
         }
         
-        MWInstance.defaultInstance.doQuery(parse)
+        MWInstance.defaultInstance.doQuery(parse)*/
     }
 
 }

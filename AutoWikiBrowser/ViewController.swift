@@ -9,7 +9,7 @@
 import Cocoa
 import WebKit
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, NSSplitViewDelegate {
     
     @IBOutlet weak var panelSplit : NSSplitView?
     @IBOutlet weak var leftPanel : NSView?
@@ -19,6 +19,8 @@ class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        panelSplit?.delegate = self
         // Do any additional setup after loading the view.
 
     }
@@ -27,6 +29,32 @@ class ViewController: NSViewController {
         didSet {
         // Update the view, if already loaded.
         }
+    }
+    
+    func splitView(_ splitView: NSSplitView, constrainSplitPosition proposedPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+        if(splitView === panelSplit) {
+        switch(dividerIndex) {
+        case 0:
+            if(proposedPosition < 100) {
+                return 0
+            } else if(proposedPosition < 200) {
+                return 200
+            }
+            break
+        case 1:
+            if(proposedPosition > (panelSplit?.frame.width)! - 100) {
+                return (panelSplit?.frame.width)!
+            } else if(proposedPosition > (panelSplit?.frame.width)! - 200) {
+                return (panelSplit?.frame.width)! - 200
+            }
+        default:
+            break
+
+        }
+        return proposedPosition
+    }
+        
+        return proposedPosition
     }
     
 
