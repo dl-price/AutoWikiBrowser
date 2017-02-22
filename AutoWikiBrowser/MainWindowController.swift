@@ -25,7 +25,3 @@ class MainWindowController : NSWindowController, NSToolbarDelegate {
     }
     
 }
-
-class WikiWebView : WebView {
-    
-}

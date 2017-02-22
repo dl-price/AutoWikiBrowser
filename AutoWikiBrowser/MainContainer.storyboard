@@ -33,13 +33,19 @@
         <scene sceneID="3jk-Rn-80U">
             <objects>
                 <viewController storyboardIdentifier="BasicSnippet" id="Gzc-gQ-vMR" customClass="SnippetController" customModule="AutoWikiBrowser" customModuleProvider="target" sceneMemberID="viewController">
-                    <webView key="view" id="g0J-Q9-JeM">
+                    <webView key="view" id="g0J-Q9-JeM" customClass="MWWebView" customModule="AutoWikiBrowser" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
                             <nil key="identifier"/>
                         </webPreferences>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="hidesidebar" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </webView>
+                    <connections>
+                        <outlet property="webView" destination="g0J-Q9-JeM" id="Mxp-li-ZGr"/>
+                    </connections>
                 </viewController>
                 <customObject id="d0V-Mo-zdw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

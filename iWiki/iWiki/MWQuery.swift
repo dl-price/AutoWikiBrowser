@@ -13,6 +13,11 @@ public class MWInstance {
     public let session : URLSession
     public static var defaultInstance = MWInstance()
     public let rootURL : NSURL
+    public var urlHost : String {
+        get {
+            return "https://" + (URLComponents(string: rootURL.absoluteString!)?.host)!
+        }
+    }
     
     public init() {
         session = URLSession(configuration: sessionConfig)
@@ -205,7 +210,7 @@ public class MWToken : MWBaseQuery {
 }
 
 public class MWReturn {
-    let data : Data?
+    public let data : Data?
     public var description : String {
         get {
             if let _ = data {
@@ -217,6 +222,24 @@ public class MWReturn {
     
     internal init(_ data: Data?) {
         self.data = data
+    }
+}
+
+public class MWParseQuery : MWBaseQuery {
+    public var page : String?
+    public var prop = "text|headhtml"
+    
+    public override init() {super.init();action="parse"}
+    
+    override public var queryItems : [URLQueryItem] {
+        var queryItems = super.queryItems
+        
+        if let _ = page {
+            queryItems.append(URLQueryItem(name: "page", value: page))
+        }
+        queryItems.append(URLQueryItem(name: "prop", value: prop))
+        
+        return queryItems
     }
 }
 

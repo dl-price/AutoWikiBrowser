@@ -9,6 +9,7 @@
 import Foundation
 import AppKit
 import WebKit
+import iWiki
 
 class MainContainerController : NSViewController {
     
@@ -92,19 +93,40 @@ class MainContainerController : NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        mainSplitController?.splitViewItems[1].isCollapsed = true
-        (mainSplitController?.childViewControllers[0] as? NSSplitViewController)?.splitViewItems[1].animator().isCollapsed = true
+        //mainSplitController?.splitViewItems[1].isCollapsed = true
+        //(mainSplitController?.childViewControllers[0] as? NSSplitViewController)?.splitViewItems[1].animator().isCollapsed = true
     }
     
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        (snippetControllers[0].view as! WebView).mainFrame.load(URLRequest(url: URL(string: "http://en.wikipedia.org")!))
+        var parse = MWParseQuery()
+        
+        parse.page = "Main_Page"
+        
+        parse.callback = {(val :MWReturn) in
+            let json = try? JSONSerialization.jsonObject(with: val.data!, options: [])
+            
+            let web = ((((json as? [String:Any])?["parse"] as? [String:Any])?["headhtml"] as? [String:String])?["*"])! + ((((json as? [String:Any])?["parse"] as? [String:Any])?["text"] as? [String:String])?["*"])! + "</body></html>"
+            
+            DispatchQueue.main.async {
+                for i in 0...3 {
+                (self.snippetControllers[i].view as! WebView).mainFrame.load(URLRequest(url: URL(string: "http://en.wikipedia.org")!))
+                }
+            }
+            
+            
+        }
+        
+        MWInstance.defaultInstance.doQuery(parse)
     }
 
 }
 
 class SnippetController : NSViewController {
-    
+    @IBOutlet var webView : MWWebView?
+    func wikiSidebar(_ obj:Any) {
+        webView!.sidebarHidden = true
+    }
 }
 
