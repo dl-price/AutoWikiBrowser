@@ -117,3 +117,31 @@ class SnippetController : NSViewController {
     }
 }
 
+class FilterController : ViewController {
+    @IBOutlet var text : NSTextField?
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    @IBAction func dismissWindow(_: AnyObject?) {
+        view.window?.close()
+    }
+    
+    @IBAction func doFilter(_: AnyObject?) {
+        
+        var cat = MWCategoryMembers()
+        
+        cat.title = text?.stringValue
+        cat.limit = 500
+        
+        cat.callback = {(ret : MWReturn) in
+            print(ret.description)
+        }
+        
+        MWInstance.defaultInstance.doQuery(cat)
+        
+        view.window?.close()
+    }
+}
+

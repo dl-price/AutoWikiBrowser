@@ -711,14 +711,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
-                            <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="26" horizontalPageScroll="10" verticalLineScroll="26" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohT-tJ-13O">
+                            <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohT-tJ-13O">
                                 <rect key="frame" x="0.0" y="20" width="450" height="280"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="NK3-wg-3RE">
                                     <rect key="frame" x="0.0" y="0.0" width="450" height="280"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="TOZ-8p-G8T" id="0lC-OL-6VS">
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="TOZ-8p-G8T" id="0lC-OL-6VS">
                                             <rect key="frame" x="0.0" y="0.0" width="450" height="280"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -788,11 +788,11 @@
                                     <nil key="backgroundColor"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="kMd-Qx-jNr">
-                                    <rect key="frame" x="1" y="383" width="148" height="16"/>
+                                    <rect key="frame" x="0.0" y="-16" width="0.0" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="R3j-sL-9Zb">
-                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <rect key="frame" x="-16" y="0.0" width="16" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -803,6 +803,9 @@
                                     <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="smallSystem"/>
                                 </buttonCell>
+                                <connections>
+                                    <segue destination="uCY-xc-ywb" kind="show" id="ZA9-4s-cVb"/>
+                                </connections>
                             </button>
                         </subviews>
                     </visualEffectView>
@@ -810,6 +813,94 @@
                 <customObject id="OEu-j2-Z15" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-298" y="887"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="zJW-cC-f2L">
+            <objects>
+                <windowController showSeguePresentationStyle="single" id="uCY-xc-ywb" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="VkA-PO-t6x">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1200"/>
+                    </window>
+                    <connections>
+                        <segue destination="wlZ-E7-mOU" kind="relationship" relationship="window.shadowedContentViewController" id="Bdg-m0-Cq7"/>
+                    </connections>
+                </windowController>
+                <customObject id="XUE-jx-E2G" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-263" y="1278"/>
+        </scene>
+        <!--Filter Controller-->
+        <scene sceneID="qFc-ey-IIt">
+            <objects>
+                <viewController id="wlZ-E7-mOU" customClass="FilterController" customModule="AutoWikiBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="z8z-X8-z5k">
+                        <rect key="frame" x="0.0" y="0.0" width="590" height="419"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1rF-b7-mKf">
+                                <rect key="frame" x="495" y="13" width="81" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lsf-qD-7xH">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissWindow:" target="wlZ-E7-mOU" id="AwB-PZ-LVp"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KzM-7V-oba">
+                                <rect key="frame" x="414" y="13" width="81" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CNB-F7-n0h">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="doFilter:" target="wlZ-E7-mOU" id="y0m-Oj-Mn6"/>
+                                </connections>
+                            </button>
+                            <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NXG-iU-AuF">
+                                <rect key="frame" x="20" y="375" width="265" height="26"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="wf8-2C-Ta6">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <objectValues>
+                                        <string>Item 1</string>
+                                        <string>Item 2</string>
+                                        <string>Item 3</string>
+                                    </objectValues>
+                                </comboBoxCell>
+                            </comboBox>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAg-Hy-3Sh">
+                                <rect key="frame" x="290" y="378" width="280" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="22V-T6-DzV">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="text" destination="vAg-Hy-3Sh" id="umQ-tD-cFZ"/>
+                    </connections>
+                </viewController>
+                <customObject id="QUK-NN-y6u" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="cx5-kA-2Gw"/>
+            </objects>
+            <point key="canvasLocation" x="499" y="1327.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -824,11 +915,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <customView identifier="Left Panel" fixedFrame="YES" id="1DR-GI-Huo">
-                                        <rect key="frame" x="0.0" y="0.0" width="251.5" height="691"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="252" height="691"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QLg-fC-IBz">
-                                                <rect key="frame" x="0.0" y="0.0" width="251.5" height="691"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="252" height="691"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <connections>
                                                     <segue destination="T0q-vJ-8we" kind="embed" id="iHT-Wm-dQl"/>
@@ -837,7 +928,7 @@
                                         </subviews>
                                     </customView>
                                     <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="thin" id="Bai-iC-haG">
-                                        <rect key="frame" x="252.5" y="0.0" width="332" height="691"/>
+                                        <rect key="frame" x="253" y="0.0" width="332" height="691"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <containerView fixedFrame="YES" id="Fl4-YS-FoB">
@@ -858,7 +949,7 @@
                                         </holdingPriorities>
                                     </splitView>
                                     <customView fixedFrame="YES" id="VKw-48-aGa">
-                                        <rect key="frame" x="585.5" y="0.0" width="263.5" height="691"/>
+                                        <rect key="frame" x="586" y="0.0" width="263" height="691"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </customView>
                                 </subviews>
