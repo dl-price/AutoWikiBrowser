@@ -80,8 +80,8 @@ class MainContainerController : NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        mainSplitController?.splitViewItems[1].isCollapsed = true
-        (mainSplitController?.childViewControllers[0] as? NSSplitViewController)?.splitViewItems[1].animator().isCollapsed = true
+        //mainSplitController?.splitViewItems[1].isCollapsed = true
+        //(mainSplitController?.childViewControllers[0] as? NSSplitViewController)?.splitViewItems[1].animator().isCollapsed = true
     }
     
     override func viewDidAppear() {
@@ -114,6 +114,17 @@ class SnippetController : NSViewController {
     @IBOutlet var webView : MWWebView?
     func wikiSidebar(_ obj:Any) {
         webView!.sidebarHidden = true
+        
+        var task = MWRevisionsQuery()
+        
+        task.titles = "Medicine"
+        task.limit = 500
+        
+        task.callback = {(new : MWReturn) in
+            print(new.json)
+        }
+        
+        MWInstance.defaultInstance.doQuery(task)
     }
 }
 

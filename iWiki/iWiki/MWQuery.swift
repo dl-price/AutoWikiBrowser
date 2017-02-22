@@ -248,3 +248,25 @@ public class MWParseQuery : MWBaseQuery {
     }
 }
 
+public class MWRevisionsQuery : MWBaseQuery {
+    public var prop = "revisions"
+    public var titles : String?
+    public var limit = 1
+    override public init() {
+        super.init()
+        action = "query"
+    }
+    
+    override public var queryItems: [URLQueryItem] {
+        var queryItems = super.queryItems
+        
+        queryItems.append(URLQueryItem(name: "prop", value: prop))
+        if let _ = titles {
+            queryItems.append(URLQueryItem(name: "titles", value: titles))
+        }
+        queryItems.append(URLQueryItem(name: "rvlimit", value: limit.description))
+        
+        return queryItems
+    }
+}
+
