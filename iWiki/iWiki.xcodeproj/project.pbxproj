@@ -1,0 +1,430 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37D5432D1E5DA7FF002218A1 /* iWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D543231E5DA7FF002218A1 /* iWiki.framework */; };
+		37D543321E5DA7FF002218A1 /* iWikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D543311E5DA7FF002218A1 /* iWikiTests.swift */; };
+		37D543341E5DA7FF002218A1 /* iWiki.h in Headers */ = {isa = PBXBuildFile; fileRef = 37D543261E5DA7FF002218A1 /* iWiki.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37D543541E5DAB6D002218A1 /* MWQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D543531E5DAB6D002218A1 /* MWQuery.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		37D5432E1E5DA7FF002218A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37D5431A1E5DA7FF002218A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37D543221E5DA7FF002218A1;
+			remoteInfo = iWiki;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		37D543231E5DA7FF002218A1 /* iWiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iWiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37D543261E5DA7FF002218A1 /* iWiki.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iWiki.h; sourceTree = "<group>"; };
+		37D543271E5DA7FF002218A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37D5432C1E5DA7FF002218A1 /* iWikiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iWikiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		37D543311E5DA7FF002218A1 /* iWikiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iWikiTests.swift; sourceTree = "<group>"; };
+		37D543331E5DA7FF002218A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37D543531E5DAB6D002218A1 /* MWQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWQuery.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37D5431F1E5DA7FF002218A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37D543291E5DA7FF002218A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37D5432D1E5DA7FF002218A1 /* iWiki.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		37D543191E5DA7FF002218A1 = {
+			isa = PBXGroup;
+			children = (
+				37D543251E5DA7FF002218A1 /* iWiki */,
+				37D543301E5DA7FF002218A1 /* iWikiTests */,
+				37D543241E5DA7FF002218A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		37D543241E5DA7FF002218A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37D543231E5DA7FF002218A1 /* iWiki.framework */,
+				37D5432C1E5DA7FF002218A1 /* iWikiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37D543251E5DA7FF002218A1 /* iWiki */ = {
+			isa = PBXGroup;
+			children = (
+				37D543261E5DA7FF002218A1 /* iWiki.h */,
+				37D543271E5DA7FF002218A1 /* Info.plist */,
+				37D543531E5DAB6D002218A1 /* MWQuery.swift */,
+			);
+			path = iWiki;
+			sourceTree = "<group>";
+		};
+		37D543301E5DA7FF002218A1 /* iWikiTests */ = {
+			isa = PBXGroup;
+			children = (
+				37D543311E5DA7FF002218A1 /* iWikiTests.swift */,
+				37D543331E5DA7FF002218A1 /* Info.plist */,
+			);
+			path = iWikiTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		37D543201E5DA7FF002218A1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37D543341E5DA7FF002218A1 /* iWiki.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		37D543221E5DA7FF002218A1 /* iWiki */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37D543371E5DA7FF002218A1 /* Build configuration list for PBXNativeTarget "iWiki" */;
+			buildPhases = (
+				37D5431E1E5DA7FF002218A1 /* Sources */,
+				37D5431F1E5DA7FF002218A1 /* Frameworks */,
+				37D543201E5DA7FF002218A1 /* Headers */,
+				37D543211E5DA7FF002218A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iWiki;
+			productName = iWiki;
+			productReference = 37D543231E5DA7FF002218A1 /* iWiki.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		37D5432B1E5DA7FF002218A1 /* iWikiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37D5433A1E5DA7FF002218A1 /* Build configuration list for PBXNativeTarget "iWikiTests" */;
+			buildPhases = (
+				37D543281E5DA7FF002218A1 /* Sources */,
+				37D543291E5DA7FF002218A1 /* Frameworks */,
+				37D5432A1E5DA7FF002218A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37D5432F1E5DA7FF002218A1 /* PBXTargetDependency */,
+			);
+			name = iWikiTests;
+			productName = iWikiTests;
+			productReference = 37D5432C1E5DA7FF002218A1 /* iWikiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		37D5431A1E5DA7FF002218A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Daniel Price";
+				TargetAttributes = {
+					37D543221E5DA7FF002218A1 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = KTC4CKXCX9;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					37D5432B1E5DA7FF002218A1 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = KTC4CKXCX9;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 37D5431D1E5DA7FF002218A1 /* Build configuration list for PBXProject "iWiki" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 37D543191E5DA7FF002218A1;
+			productRefGroup = 37D543241E5DA7FF002218A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				37D543221E5DA7FF002218A1 /* iWiki */,
+				37D5432B1E5DA7FF002218A1 /* iWikiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		37D543211E5DA7FF002218A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37D5432A1E5DA7FF002218A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37D5431E1E5DA7FF002218A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37D543541E5DAB6D002218A1 /* MWQuery.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37D543281E5DA7FF002218A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37D543321E5DA7FF002218A1 /* iWikiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		37D5432F1E5DA7FF002218A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37D543221E5DA7FF002218A1 /* iWiki */;
+			targetProxy = 37D5432E1E5DA7FF002218A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		37D543351E5DA7FF002218A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = iWiki;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		37D543361E5DA7FF002218A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = iWiki;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		37D543381E5DA7FF002218A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KTC4CKXCX9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = iWiki/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DLP.iWiki;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		37D543391E5DA7FF002218A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KTC4CKXCX9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = iWiki/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DLP.iWiki;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		37D5433B1E5DA7FF002218A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KTC4CKXCX9;
+				INFOPLIST_FILE = iWikiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DLP.iWikiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		37D5433C1E5DA7FF002218A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KTC4CKXCX9;
+				INFOPLIST_FILE = iWikiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DLP.iWikiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37D5431D1E5DA7FF002218A1 /* Build configuration list for PBXProject "iWiki" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37D543351E5DA7FF002218A1 /* Debug */,
+				37D543361E5DA7FF002218A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37D543371E5DA7FF002218A1 /* Build configuration list for PBXNativeTarget "iWiki" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37D543381E5DA7FF002218A1 /* Debug */,
+				37D543391E5DA7FF002218A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		37D5433A1E5DA7FF002218A1 /* Build configuration list for PBXNativeTarget "iWikiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37D5433B1E5DA7FF002218A1 /* Debug */,
+				37D5433C1E5DA7FF002218A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 37D5431A1E5DA7FF002218A1 /* Project object */;
+}

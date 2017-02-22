@@ -3,55 +3,118 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="11762"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Split View Controller-->
-        <scene sceneID="eLA-0a-ZdJ">
+        <!--Main Container Controller-->
+        <scene sceneID="QVI-fj-vrH">
             <objects>
-                <splitViewController id="hDv-YQ-bbQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainContainerController" id="k8r-1L-OlY" customClass="MainContainerController" customModule="AutoWikiBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="YG9-TS-dHT">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JKY-7F-6Qc">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <segue destination="59Z-1p-0b9" kind="embed" id="VEF-HS-xND"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="mdM-R1-Lpa" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-125" y="-286"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="NYL-8P-QtM">
+            <objects>
+                <splitViewController id="59Z-1p-0b9" sceneMemberID="viewController">
                     <splitViewItems>
-                        <splitViewItem id="UYz-FA-vHf"/>
-                        <splitViewItem id="vlo-J7-ghC"/>
+                        <splitViewItem id="5B2-gL-zUd"/>
+                        <splitViewItem id="7dj-fI-Sty"/>
                     </splitViewItems>
-                    <splitView key="splitView" dividerStyle="thin" id="Gya-Vh-0CP">
+                    <splitView key="splitView" dividerStyle="thin" id="LB4-aI-c89">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </splitView>
                     <connections>
-                        <segue destination="X4I-MV-Juf" kind="relationship" relationship="splitItems" id="Sx0-Ku-g3J"/>
-                        <segue destination="19X-ra-Hlc" kind="relationship" relationship="splitItems" id="cm2-WO-blB"/>
+                        <segue destination="6IQ-xG-KPu" kind="relationship" relationship="splitItems" id="9UB-JN-0B2"/>
+                        <segue destination="ljY-dV-3NW" kind="relationship" relationship="splitItems" id="RSe-2l-BRU"/>
                     </connections>
                 </splitViewController>
-                <customObject id="b39-v4-ZJV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="IJw-4z-L2M" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-60" y="22"/>
+            <point key="canvasLocation" x="-108" y="130"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="pUK-xY-CqN">
+        <scene sceneID="V6g-ES-t0F">
             <objects>
-                <viewController id="X4I-MV-Juf" sceneMemberID="viewController">
-                    <view key="view" id="sg5-cY-mUu">
+                <viewController id="6IQ-xG-KPu" sceneMemberID="viewController">
+                    <splitView key="view" arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" id="IqN-fy-DS8">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
-                    </view>
+                        <subviews>
+                            <webView fixedFrame="YES" id="iiM-2F-mK6">
+                                <rect key="frame" x="0.0" y="0.0" width="220" height="300"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
+                                    <nil key="identifier"/>
+                                </webPreferences>
+                            </webView>
+                            <webView fixedFrame="YES" id="C7g-gB-Es7">
+                                <rect key="frame" x="230" y="0.0" width="220" height="300"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
+                                    <nil key="identifier"/>
+                                </webPreferences>
+                            </webView>
+                        </subviews>
+                        <holdingPriorities>
+                            <real value="250"/>
+                            <real value="250"/>
+                        </holdingPriorities>
+                    </splitView>
                 </viewController>
-                <customObject id="8BV-mu-eZd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="zHJ-Vz-S6O" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="610" y="-159"/>
+            <point key="canvasLocation" x="532" y="-116"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="Wem-Qs-Ng4">
+        <scene sceneID="dRm-NO-bxl">
             <objects>
-                <viewController id="19X-ra-Hlc" sceneMemberID="viewController">
-                    <view key="view" id="1JX-UT-PoN">
+                <viewController id="ljY-dV-3NW" sceneMemberID="viewController">
+                    <splitView key="view" arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" id="hhr-W1-wwI">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
-                    </view>
+                        <subviews>
+                            <webView fixedFrame="YES" id="PeH-mw-h5S">
+                                <rect key="frame" x="0.0" y="0.0" width="219" height="300"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
+                                    <nil key="identifier"/>
+                                </webPreferences>
+                            </webView>
+                            <webView fixedFrame="YES" id="XZi-A8-bmx">
+                                <rect key="frame" x="229" y="0.0" width="221" height="300"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
+                                    <nil key="identifier"/>
+                                </webPreferences>
+                            </webView>
+                        </subviews>
+                        <holdingPriorities>
+                            <real value="250"/>
+                            <real value="250"/>
+                        </holdingPriorities>
+                    </splitView>
                 </viewController>
-                <customObject id="1W2-Ty-hV5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="qe8-E4-aMr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="610" y="202"/>
+            <point key="canvasLocation" x="532" y="245"/>
         </scene>
     </scenes>
 </document>

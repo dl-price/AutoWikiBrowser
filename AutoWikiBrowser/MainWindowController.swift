@@ -24,8 +24,6 @@ class MainWindowController : NSWindowController, NSToolbarDelegate {
         window!.titleVisibility = .hidden
     }
     
-    
-    
 }
 
 class WikiWebView : WebView {

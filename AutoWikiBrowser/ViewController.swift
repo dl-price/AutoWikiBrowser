@@ -9,7 +9,7 @@
 import Cocoa
 import WebKit
 
-class ViewController: NSViewController, NSSplitViewDelegate {
+class ViewController: NSViewController {
     
     @IBOutlet weak var panelSplit : NSSplitView?
     @IBOutlet weak var leftPanel : NSView?
@@ -24,12 +24,6 @@ class ViewController: NSViewController, NSSplitViewDelegate {
         
         webA?.mainFrame.load(URLRequest(url: URL(string: "http://en.wikipedia.org")!))
         webB?.mainFrame.load(URLRequest(url: URL(string: "http://en.wikipedia.org")!))
-        
-        let a = storyboard?.instantiateController(withIdentifier: "LeftPanelController") as! NSViewController
-        leftPanel?.addSubview(a.view)
-
-        a.view.layer?.backgroundColor = NSColor.green.cgColor
-        panelSplit?.delegate = self
 
     }
 
@@ -39,9 +33,7 @@ class ViewController: NSViewController, NSSplitViewDelegate {
         }
     }
     
-    func splitViewDidResizeSubviews(_ notification: Notification) {
-        leftPanel?.subviews[0].setFrameSize((leftPanel?.frame.size)!)
-    }
+
 
 }
 

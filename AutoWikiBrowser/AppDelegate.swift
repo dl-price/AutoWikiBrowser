@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import iWiki
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -16,15 +17,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         
+        
+        
         let thing = MWCategoryMembers()
         
         thing.title = "Category:Medical_terminology"
         thing.limit = 400
         MWInstance.defaultInstance.doQuery(thing)
-        
-        
-        
-    
+
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
