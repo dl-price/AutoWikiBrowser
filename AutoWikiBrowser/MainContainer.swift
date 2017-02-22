@@ -136,7 +136,8 @@ class FilterController : ViewController {
         cat.limit = 500
         
         cat.callback = {(ret : MWReturn) in
-            print(ret.description)
+            
+            print(ret.json)
         }
         
         MWInstance.defaultInstance.doQuery(cat)

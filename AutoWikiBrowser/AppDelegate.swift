@@ -26,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        return true;
+        return false
     }
     
     @IBAction func newTab(_ sender: Any) {

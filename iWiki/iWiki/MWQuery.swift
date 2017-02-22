@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 public class MWInstance {
     public let sessionConfig = URLSessionConfiguration.default
     public let session : URLSession
@@ -211,6 +212,7 @@ public class MWToken : MWBaseQuery {
 
 public class MWReturn {
     public let data : Data?
+    public let json : JSON?
     public var description : String {
         get {
             if let _ = data {
@@ -222,6 +224,9 @@ public class MWReturn {
     
     internal init(_ data: Data?) {
         self.data = data
+        if let _ = data {
+            self.json = JSON(data: data!)
+        } else { self.json = nil }
     }
 }
 

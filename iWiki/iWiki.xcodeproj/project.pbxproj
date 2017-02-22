@@ -11,6 +11,7 @@
 		37D543321E5DA7FF002218A1 /* iWikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D543311E5DA7FF002218A1 /* iWikiTests.swift */; };
 		37D543341E5DA7FF002218A1 /* iWiki.h in Headers */ = {isa = PBXBuildFile; fileRef = 37D543261E5DA7FF002218A1 /* iWiki.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37D543541E5DAB6D002218A1 /* MWQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D543531E5DAB6D002218A1 /* MWQuery.swift */; };
+		37D543631E5E3EF4002218A1 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D543621E5E3EF4002218A1 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,8 @@
 		37D543311E5DA7FF002218A1 /* iWikiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iWikiTests.swift; sourceTree = "<group>"; };
 		37D543331E5DA7FF002218A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37D543531E5DAB6D002218A1 /* MWQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWQuery.swift; sourceTree = "<group>"; };
+		37D5435F1E5E3CE2002218A1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../../SwiftyJSON.framework; sourceTree = "<group>"; };
+		37D543621E5E3EF4002218A1 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 				37D543251E5DA7FF002218A1 /* iWiki */,
 				37D543301E5DA7FF002218A1 /* iWikiTests */,
 				37D543241E5DA7FF002218A1 /* Products */,
+				37D5435E1E5E3CE2002218A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +80,7 @@
 				37D543261E5DA7FF002218A1 /* iWiki.h */,
 				37D543271E5DA7FF002218A1 /* Info.plist */,
 				37D543531E5DAB6D002218A1 /* MWQuery.swift */,
+				37D543621E5E3EF4002218A1 /* SwiftyJSON.swift */,
 			);
 			path = iWiki;
 			sourceTree = "<group>";
@@ -87,6 +92,14 @@
 				37D543331E5DA7FF002218A1 /* Info.plist */,
 			);
 			path = iWikiTests;
+			sourceTree = "<group>";
+		};
+		37D5435E1E5E3CE2002218A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37D5435F1E5E3CE2002218A1 /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37D543541E5DAB6D002218A1 /* MWQuery.swift in Sources */,
+				37D543631E5E3EF4002218A1 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +429,7 @@
 				37D543391E5DA7FF002218A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37D5433A1E5DA7FF002218A1 /* Build configuration list for PBXNativeTarget "iWikiTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +438,7 @@
 				37D5433C1E5DA7FF002218A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
