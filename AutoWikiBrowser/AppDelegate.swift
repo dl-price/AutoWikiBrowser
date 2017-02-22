@@ -17,13 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         
-        
-        
-        let thing = MWCategoryMembers()
-        
-        thing.title = "Category:Medical_terminology"
-        thing.limit = 400
-        MWInstance.defaultInstance.doQuery(thing)
+        //MWInstance.defaultInstance.doQuery(thing)
 
     }
 
