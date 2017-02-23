@@ -112,6 +112,13 @@ class MainContainerController : NSViewController {
 
 class SnippetController : NSViewController {
     @IBOutlet var webView : MWWebView?
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        
+         webView?.mainFrame.load(URLRequest(url: URL(string: "http://en.wikipedia.org")!))
+    }
+    
     func wikiSidebar(_ obj:Any) {
         webView!.sidebarHidden = true
         
@@ -143,6 +150,8 @@ class FilterController : ViewController {
         
         var cat = MWCategoryMembers()
         
+        if let _ = text?.stringValue {
+        
         cat.title = text?.stringValue
         cat.limit = 500
         
@@ -155,6 +164,13 @@ class FilterController : ViewController {
         }
         
         cat.performIn(MWInstance.defaultInstance)
+        }
+        
+        let query = MWWatchlistRawQuery()
+        
+        query.limit = 500
+        
+        query.performIn(MWInstance.defaultInstance)
         
         view.window?.close()
     }

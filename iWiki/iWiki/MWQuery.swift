@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 
 public class MWInstance {
@@ -82,12 +83,11 @@ public class MWBaseQuery<ReturnSub:MWReturn> {
                 NSLog(error.debugDescription)
             }
             else {
-                if let _ = self.callback {
                     let ret = ReturnSub(data)
                     self.continueToken = ret.getContinue()
                     self.onReceived(ret: ret)
-                    self.callback!(ret)
-                }
+                    if let _ = self.callback { self.callback!(ret) }
+                
             }
         })
         
@@ -103,11 +103,20 @@ public class MWBaseQuery<ReturnSub:MWReturn> {
 public class MWListQuery<T:MWReturn> : MWBaseQuery<T> {
     public var title : String?
     public var limit : Int?
-    public var list : String = ""
+    public var list : String?
     
     public override init() {
         super.init()
         action = "query"
+    }
+    
+    override internal var queryItems: [URLQueryItem] {
+        var queryItems = super.queryItems
+        
+        if let _ = title { queryItems.append(URLQueryItem(name: "title", value: title)) }
+        if let _ = list { queryItems.append(URLQueryItem(name: "list", value: list)) }
+        
+        return queryItems
     }
 }
 
@@ -263,4 +272,68 @@ public class MWRevisionsQuery : MWBaseQuery<MWReturn> {
         return queryItems
     }
 }
+
+public class MWWatchlistRawQuery : MWListQuery<MWWRReturn> {
+    override public init() {
+        super.init()
+        list = "watchlistraw"
+    }
+    override public var queryItems: [URLQueryItem] {
+        var queryItems = super.queryItems
+        
+        queryItems.append(URLQueryItem(name: "wrlimit", value: limit?.description))
+        
+        return queryItems
+    }
+    
+    override func onReceived(ret: MWWRReturn) {
+        for title in ret.titles {
+            let fetch = MWPage.newFetchRequest()
+            fetch.predicate = NSPredicate(format: "title == %@", title)
+            do {
+                let fetched = try MWDataController.defaultController?.managedObjectContext.fetch(fetch)
+                if(fetched?.count == 0) {
+                    let new = NSEntityDescription.insertNewObject(forEntityName: "MWPage", into: (MWDataController.defaultController?.managedObjectContext)!) as! MWPage
+                    //new.pageid = Int32(obj.pageid!)
+                    new.title = title
+                    
+                    MWList.watchlist?.addToPages(new)
+                    
+                    try! MWDataController.defaultController?.managedObjectContext.save()
+                }
+                else {
+                    print("Item should be updated here")
+                }
+            } catch {
+                print("Error")
+            }
+            
+        }
+        
+        let array = MWList.watchlist?.pages?.allObjects as? [MWPage]
+        
+        for obj in array! {
+            print(obj.title)
+        }
+    }
+}
+
+public class MWWRReturn : MWReturn {
+    override internal func getContinue() -> String? {
+        return "wrcontinue"
+    }
+    
+    public var titles : [String] {
+        let list : JSON? = json?["watchlistraw"]
+        
+        var ret = [String]()
+        
+        for el in (list?.array)! {
+            ret.append(el["title"].stringValue)
+        }
+        
+        return ret
+    }
+}
+
 
