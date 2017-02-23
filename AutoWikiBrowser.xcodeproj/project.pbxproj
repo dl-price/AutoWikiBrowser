@@ -19,6 +19,7 @@
 		37D542FD1E5D564D002218A1 /* MainContainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37D542FC1E5D564D002218A1 /* MainContainer.storyboard */; };
 		37D543551E5DACDE002218A1 /* iWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D543431E5DA800002218A1 /* iWiki.framework */; };
 		37D543561E5DACDE002218A1 /* iWiki.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37D543431E5DA800002218A1 /* iWiki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		37D543691E5EC1A9002218A1 /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D543681E5EC1A9002218A1 /* SourceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		379970DD1E5B60280086B3D9 /* MWWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWWebView.swift; sourceTree = "<group>"; };
 		37D542FC1E5D564D002218A1 /* MainContainer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainContainer.storyboard; sourceTree = "<group>"; };
 		37D5433D1E5DA7FF002218A1 /* iWiki.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iWiki.xcodeproj; path = iWiki/iWiki.xcodeproj; sourceTree = "<group>"; };
+		37D543681E5EC1A9002218A1 /* SourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				379970DD1E5B60280086B3D9 /* MWWebView.swift */,
 				379970B21E5AF6BE0086B3D9 /* Assets.xcassets */,
 				379970B41E5AF6BE0086B3D9 /* Main.storyboard */,
+				37D543681E5EC1A9002218A1 /* SourceViewController.swift */,
 				37D542FC1E5D564D002218A1 /* MainContainer.storyboard */,
 				379970B71E5AF6BE0086B3D9 /* Info.plist */,
 				379970DB1E5B53060086B3D9 /* MainWindowController.swift */,
@@ -350,6 +353,7 @@
 				379970B11E5AF6BE0086B3D9 /* ViewController.swift in Sources */,
 				377339401E5C713200426E14 /* MainContainer.swift in Sources */,
 				379970AF1E5AF6BE0086B3D9 /* AppDelegate.swift in Sources */,
+				37D543691E5EC1A9002218A1 /* SourceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

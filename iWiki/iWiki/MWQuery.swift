@@ -25,18 +25,20 @@ public class MWInstance {
         rootURL = NSURL(string: "https://en.wikipedia.org/w/api.php")!
     }
     
-    public func doQuery(_ query:MWBaseQuery) {
+    public func doQuery(_ query:MWBaseQuery<MWReturn>) {
         
-        query.perform(self)
+        query.performIn(self)
     }
+    
 }
 
-public class MWBaseQuery {
+public class MWBaseQuery<ReturnSub:MWReturn> {
     public var utf8 = true
     public var format = "json"
     public var action = ""
     public var meta : String?
-    public var callback : ((MWReturn) -> Void)?
+    public var callback : ((ReturnSub) -> Void)?
+    internal var continueToken : String?
     internal var postBody : String? { get { return nil } }
     
     
@@ -58,7 +60,7 @@ public class MWBaseQuery {
         }
     }
     
-    internal func perform(_ instance: MWInstance) {
+    public func performIn(_ instance: MWInstance) {
         performDataTask(instance)
     }
     
@@ -80,16 +82,23 @@ public class MWBaseQuery {
             }
             else {
                 if let _ = self.callback {
-                    self.callback!(MWReturn(data))
+                    let ret = ReturnSub(data)
+                    self.continueToken = ret.getContinue()
+                    self.callback!(ret)
                 }
             }
         })
         
         task.resume()
     }
+    public var moreAvailable : Bool {
+        get {
+            return continueToken != nil
+        }
+    }
 }
 
-public class MWListQuery : MWBaseQuery {
+public class MWListQuery<T:MWReturn> : MWBaseQuery<T> {
     public var title : String?
     public var limit : Int?
     public var list : String = ""
@@ -100,32 +109,9 @@ public class MWListQuery : MWBaseQuery {
     }
 }
 
-public class MWCategoryMembers : MWListQuery {
-    public override init() {
-        super.init()
-        list = "categorymembers"
-    }
-    
-    override public var queryItems : [URLQueryItem] {
-        get {
-            var queryItems = super.queryItems
-            
-            if let _ = title {
-                queryItems.append(URLQueryItem(name: "cmtitle", value: title))
-            }
-            if let _ = limit {
-                queryItems.append(URLQueryItem(name: "cmlimit", value: "\(limit!)"))
-            }
-            queryItems.append(URLQueryItem(name: "list", value: list))
-            
-            return queryItems
-        }
-    }
-    
-    
-}
 
-public class MWLogin : MWBaseQuery {
+
+public class MWLogin : MWBaseQuery<MWReturn> {
  public let username : String
  public let password : String
  var token : String?
@@ -188,7 +174,7 @@ public class MWLogin : MWBaseQuery {
     }
  }
 
-public class MWToken : MWBaseQuery {
+public class MWToken : MWBaseQuery<MWReturn> {
     public let type : String
     
     public init(_ type: String) {
@@ -222,15 +208,21 @@ public class MWReturn {
         }
     }
     
-    internal init(_ data: Data?) {
+    required public init(_ data: Data?) {
         self.data = data
         if let _ = data {
             self.json = JSON(data: data!)
         } else { self.json = nil }
     }
+    
+    internal func getContinue() -> String? {
+        return nil
+    }
 }
 
-public class MWParseQuery : MWBaseQuery {
+
+
+public class MWParseQuery : MWBaseQuery<MWReturn> {
     public var page : String?
     public var prop = "text|headhtml"
     
@@ -248,7 +240,7 @@ public class MWParseQuery : MWBaseQuery {
     }
 }
 
-public class MWRevisionsQuery : MWBaseQuery {
+public class MWRevisionsQuery : MWBaseQuery<MWReturn> {
     public var prop = "revisions"
     public var titles : String?
     public var limit = 1

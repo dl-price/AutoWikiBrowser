@@ -12,6 +12,7 @@
 		37D543341E5DA7FF002218A1 /* iWiki.h in Headers */ = {isa = PBXBuildFile; fileRef = 37D543261E5DA7FF002218A1 /* iWiki.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37D543541E5DAB6D002218A1 /* MWQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D543531E5DAB6D002218A1 /* MWQuery.swift */; };
 		37D543631E5E3EF4002218A1 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D543621E5E3EF4002218A1 /* SwiftyJSON.swift */; };
+		37D543671E5EB949002218A1 /* MWCategoryMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D543661E5EB949002218A1 /* MWCategoryMembers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		37D543531E5DAB6D002218A1 /* MWQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWQuery.swift; sourceTree = "<group>"; };
 		37D5435F1E5E3CE2002218A1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../../SwiftyJSON.framework; sourceTree = "<group>"; };
 		37D543621E5E3EF4002218A1 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		37D543661E5EB949002218A1 /* MWCategoryMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWCategoryMembers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				37D543271E5DA7FF002218A1 /* Info.plist */,
 				37D543531E5DAB6D002218A1 /* MWQuery.swift */,
 				37D543621E5E3EF4002218A1 /* SwiftyJSON.swift */,
+				37D543661E5EB949002218A1 /* MWCategoryMembers.swift */,
 			);
 			path = iWiki;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			files = (
 				37D543541E5DAB6D002218A1 /* MWQuery.swift in Sources */,
 				37D543631E5E3EF4002218A1 /* SwiftyJSON.swift in Sources */,
+				37D543671E5EB949002218A1 /* MWCategoryMembers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -146,12 +146,15 @@ class FilterController : ViewController {
         cat.title = text?.stringValue
         cat.limit = 500
         
-        cat.callback = {(ret : MWReturn) in
-            
+        cat.callback = {(ret : MWCMReturn) in
             print(ret.json)
+            if(cat.moreAvailable) {
+                cat.performIn(MWInstance.defaultInstance)
+            }
+            
         }
         
-        MWInstance.defaultInstance.doQuery(cat)
+        cat.performIn(MWInstance.defaultInstance)
         
         view.window?.close()
     }
