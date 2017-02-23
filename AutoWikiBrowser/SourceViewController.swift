@@ -15,14 +15,20 @@ class SourceViewController : NSViewController {
     
     @IBOutlet var outlineTree : NSTreeController?
     
-    override func awakeFromNib() {
-        let n = Node(data: "yes")
-        //n.children.append(Node(data: "yes1"))
-        //n.children.append(Node(data: "yes2"))
+    override func viewDidLoad() {
         
-        outlineTree?.addObject(n)
         
-        print(outlineTree?.countKeyPath)
+        if let count = (outlineTree?.arrangedObjects as? [Node])?.count { if(count > 0) { return } }
+            let n = Node(data: "yes")
+            
+            n.children.append(Node(data: "yes1"))
+            n.children.append(Node(data: "yes2"))
+            
+            outlineTree?.addObject(n)
+        
+        
+        
+       
     }
     
 }
@@ -36,5 +42,8 @@ public class Node : NSObject {
     }
     public init(data: String) {
         self.data = data
+    }
+    func countKeyPath() -> Int {
+        return children.count
     }
 }

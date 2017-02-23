@@ -147,7 +147,7 @@ class FilterController : ViewController {
         cat.limit = 500
         
         cat.callback = {(ret : MWCMReturn) in
-            print(ret.json)
+            
             if(cat.moreAvailable) {
                 cat.performIn(MWInstance.defaultInstance)
             }
