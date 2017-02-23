@@ -12,12 +12,14 @@ import iWiki
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
+    let dataController = MWDataController()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         
         //MWInstance.defaultInstance.doQuery(thing)
+        
+        let req = MWPage.newFetchRequest()
 
     }
 

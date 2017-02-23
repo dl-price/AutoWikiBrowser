@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372F619D1E5F244A0076B826 /* MWDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 372F619B1E5F244A0076B826 /* MWDataModel.xcdatamodeld */; };
+		372F619F1E5F24770076B826 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F619E1E5F24770076B826 /* DataController.swift */; };
+		372F61BB1E5F3EE00076B826 /* MWPage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F61B91E5F3EE00076B826 /* MWPage+CoreDataClass.swift */; };
+		372F61BC1E5F3EE00076B826 /* MWPage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F61BA1E5F3EE00076B826 /* MWPage+CoreDataProperties.swift */; };
 		37D5432D1E5DA7FF002218A1 /* iWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D543231E5DA7FF002218A1 /* iWiki.framework */; };
 		37D543321E5DA7FF002218A1 /* iWikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D543311E5DA7FF002218A1 /* iWikiTests.swift */; };
 		37D543341E5DA7FF002218A1 /* iWiki.h in Headers */ = {isa = PBXBuildFile; fileRef = 37D543261E5DA7FF002218A1 /* iWiki.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		372F619C1E5F244A0076B826 /* MWDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MWDataModel.xcdatamodel; sourceTree = "<group>"; };
+		372F619E1E5F24770076B826 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		372F61B91E5F3EE00076B826 /* MWPage+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MWPage+CoreDataClass.swift"; sourceTree = "<group>"; };
+		372F61BA1E5F3EE00076B826 /* MWPage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MWPage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		37D543231E5DA7FF002218A1 /* iWiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iWiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D543261E5DA7FF002218A1 /* iWiki.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iWiki.h; sourceTree = "<group>"; };
 		37D543271E5DA7FF002218A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +68,7 @@
 		37D543191E5DA7FF002218A1 = {
 			isa = PBXGroup;
 			children = (
+				372F619B1E5F244A0076B826 /* MWDataModel.xcdatamodeld */,
 				37D543251E5DA7FF002218A1 /* iWiki */,
 				37D543301E5DA7FF002218A1 /* iWikiTests */,
 				37D543241E5DA7FF002218A1 /* Products */,
@@ -79,11 +88,14 @@
 		37D543251E5DA7FF002218A1 /* iWiki */ = {
 			isa = PBXGroup;
 			children = (
+				372F61B91E5F3EE00076B826 /* MWPage+CoreDataClass.swift */,
+				372F61BA1E5F3EE00076B826 /* MWPage+CoreDataProperties.swift */,
 				37D543261E5DA7FF002218A1 /* iWiki.h */,
 				37D543271E5DA7FF002218A1 /* Info.plist */,
 				37D543531E5DAB6D002218A1 /* MWQuery.swift */,
 				37D543621E5E3EF4002218A1 /* SwiftyJSON.swift */,
 				37D543661E5EB949002218A1 /* MWCategoryMembers.swift */,
+				372F619E1E5F24770076B826 /* DataController.swift */,
 			);
 			path = iWiki;
 			sourceTree = "<group>";
@@ -218,7 +230,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372F61BB1E5F3EE00076B826 /* MWPage+CoreDataClass.swift in Sources */,
+				372F619F1E5F24770076B826 /* DataController.swift in Sources */,
+				372F619D1E5F244A0076B826 /* MWDataModel.xcdatamodeld in Sources */,
 				37D543541E5DAB6D002218A1 /* MWQuery.swift in Sources */,
+				372F61BC1E5F3EE00076B826 /* MWPage+CoreDataProperties.swift in Sources */,
 				37D543631E5E3EF4002218A1 /* SwiftyJSON.swift in Sources */,
 				37D543671E5EB949002218A1 /* MWCategoryMembers.swift in Sources */,
 			);
@@ -445,6 +461,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		372F619B1E5F244A0076B826 /* MWDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				372F619C1E5F244A0076B826 /* MWDataModel.xcdatamodel */,
+			);
+			currentVersion = 372F619C1E5F244A0076B826 /* MWDataModel.xcdatamodel */;
+			path = MWDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 37D5431A1E5DA7FF002218A1 /* Project object */;
 }

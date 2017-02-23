@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 public class MWCategoryMembers : MWListQuery<MWCMReturn> {
     public override init() {
@@ -30,6 +31,33 @@ public class MWCategoryMembers : MWListQuery<MWCMReturn> {
             }
             
             return queryItems
+        }
+    }
+    
+    override internal func onReceived(ret: MWCMReturn) {
+        if let ctrl = MWDataController.defaultController {
+            for obj in ret.members {
+                let fetch = MWPage.newFetchRequest()
+                fetch.predicate = NSPredicate(format: "pageid == %d", obj.pageid!)
+                    do {
+                        let fetched = try ctrl.managedObjectContext.fetch(fetch)
+                        if(fetched.count == 0) {
+                         let new = NSEntityDescription.insertNewObject(forEntityName: "MWPage", into: ctrl.managedObjectContext) as! MWPage
+                            new.pageid = Int32(obj.pageid!)
+                            new.title = obj.title
+                            
+                            try! ctrl.managedObjectContext.save()
+                    }
+                    else {
+                        print("Item should be updated here")
+                    }
+                } catch {
+                        print("Error")
+                }
+                
+            }
+            //try! ctrl.managedObjectContext.save()
+            
         }
     }
 }

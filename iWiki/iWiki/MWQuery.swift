@@ -38,6 +38,7 @@ public class MWBaseQuery<ReturnSub:MWReturn> {
     public var action = ""
     public var meta : String?
     public var callback : ((ReturnSub) -> Void)?
+    internal func onReceived(ret: ReturnSub) {}
     internal var continueToken : String?
     internal var postBody : String? { get { return nil } }
     
@@ -84,6 +85,7 @@ public class MWBaseQuery<ReturnSub:MWReturn> {
                 if let _ = self.callback {
                     let ret = ReturnSub(data)
                     self.continueToken = ret.getContinue()
+                    self.onReceived(ret: ret)
                     self.callback!(ret)
                 }
             }
