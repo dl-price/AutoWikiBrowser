@@ -17,10 +17,12 @@ class SourceViewController : NSViewController {
     
     override func awakeFromNib() {
         let n = Node(data: "yes")
-        n.children.append(Node(data: "yes1"))
-        n.children.append(Node(data: "yes2"))
+        //n.children.append(Node(data: "yes1"))
+        //n.children.append(Node(data: "yes2"))
         
         outlineTree?.addObject(n)
+        
+        print(outlineTree?.countKeyPath)
     }
     
 }
