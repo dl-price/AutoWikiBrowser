@@ -11,7 +11,7 @@ import WebKit
 
 class MWWebView : WebView, WebFrameLoadDelegate {
     
-    @IBInspectable var hidesidebar : Bool = false
+    @IBInspectable var alwaysHideSidebar : Bool = false
     
     var sidebarHidden : Bool {
         set(new) {
@@ -31,8 +31,12 @@ class MWWebView : WebView, WebFrameLoadDelegate {
     }
     
     func webView(_ sender: WebView!, didFinishLoadFor frame: WebFrame!) {
-        if(hidesidebar) {
+        if(alwaysHideSidebar) {
             sidebarHidden = true
         }
+    }
+    
+    func test(_ sender: Any?) {
+        print("Success")
     }
 }

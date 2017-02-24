@@ -135,7 +135,7 @@ class SnippetController : NSViewController {
     }
 }
 
-class FilterController : ViewController {
+class FilterController : UberViewController {
     @IBOutlet var text : NSTextField?
     
     required init?(coder: NSCoder) {

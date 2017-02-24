@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
             endingLineNumber = "12"
-            landmarkName = "ViewController"
+            landmarkName = "UberViewController"
             landmarkType = "3">
             <Locations>
                <Location
@@ -124,7 +124,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "11"
             endingLineNumber = "11"
-            landmarkName = "ViewController"
+            landmarkName = "UberViewController"
             landmarkType = "3">
             <Locations>
                <Location
@@ -219,6 +219,54 @@
             endingLineNumber = "24"
             landmarkName = "updateOrCreate(forName:withURL:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWiki/iWiki/MWList+CoreDataClass.swift"
+            timestampString = "509631414.036436"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "updateFromWiki(callback:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iWiki.MWList.(updateFromWiki (callback : Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "iWiki"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Dan/Documents/github/AutoWikiBrowser/iWiki/iWiki/MWList+CoreDataClass.swift"
+                  timestampString = "509630567.849097"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "1020">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iWiki.MWList.(updateFromWiki (callback : Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "iWiki"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Dan/Documents/github/AutoWikiBrowser/iWiki/iWiki/MWList+CoreDataClass.swift"
+                  timestampString = "509630567.850361"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "2399">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

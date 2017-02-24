@@ -10,11 +10,13 @@ import Foundation
 import AppKit
 import iWiki
 
-class SourceViewController : NSViewController {
+class SourceViewController : NSViewController, NSOutlineViewDelegate {
     
     @IBOutlet var outlineView : NSOutlineView?
     
     @IBOutlet var outlineTree : NSTreeController?
+    
+    public weak var uberViewController : UberViewController?
     
     override func viewDidLoad() {
         
@@ -24,12 +26,12 @@ class SourceViewController : NSViewController {
         let watchlist = MWList.watchlist
         
         watchlist?.updateFromWiki(callback: {() in
-            DispatchQueue.main.async {
             for page in (watchlist?.pages?.allObjects as? [MWPage])! {
                 let n = Node(data: page.title! )
-                    self.outlineTree?.addObject(n)
+                n.instance = page.inWiki
+                self.outlineTree?.addObject(n)
             }
-            }
+            
         })
         
         
@@ -37,10 +39,21 @@ class SourceViewController : NSViewController {
        
     }
     
+    func outlineViewSelectionDidChange(_ notification: Notification) {
+
+        
+        if let node = (self.outlineView?.item(atRow: self.outlineView!.selectedRow) as? NSTreeNode)?.representedObject as? Node {
+            print(node.data)
+            print(node.instance?.apiURL)
+        }
+        
+    }
+    
 }
 
 public class Node : NSObject {
     public var data : String?
+    public var instance : MWInstance?
     public var children : [Node] = []
     func isLeaf() -> Bool {
         if (children.isEmpty) { return true }

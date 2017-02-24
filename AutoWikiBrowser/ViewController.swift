@@ -9,18 +9,21 @@
 import Cocoa
 import WebKit
 
-class ViewController: NSViewController, NSSplitViewDelegate {
+class UberViewController: NSViewController, NSSplitViewDelegate {
     
     @IBOutlet weak var panelSplit : NSSplitView?
     @IBOutlet weak var leftPanel : NSView?
     @IBOutlet weak var centerPanel : NSView?
     @IBOutlet weak var rightPanel : NSView?
+    weak var primaryContainer : MainContainerController?
+    //weak var mainContainer { primaryView?.subviews[0].pare }
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         panelSplit?.delegate = self
+        
         // Do any additional setup after loading the view.
 
     }
@@ -55,6 +58,15 @@ class ViewController: NSViewController, NSSplitViewDelegate {
     }
         
         return proposedPosition
+    }
+    
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "embedPrimaryController") {
+            primaryContainer = segue.destinationController as? MainContainerController
+        }
+        if(segue.identifier == "embedSourceViewInLeftPanel") {
+            (segue.destinationController as? SourceViewController)?.uberViewController = self
+        }
     }
     
 

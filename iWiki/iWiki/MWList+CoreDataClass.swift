@@ -11,7 +11,7 @@ import CoreData
 
 
 public class MWList: NSManagedObject {
-    public class var watchlist : MWList? {
+    public static var watchlist : MWList? = {
         let req = MWList.newFetchRequest()
         
         req.predicate = NSPredicate(format: "name == %@", "watchlist")
@@ -27,14 +27,13 @@ public class MWList: NSManagedObject {
                 return new
             }
             else {
-                
                 return fetched![0]
             }
         } catch {
             print("Error fetching watchlist from CoreData")
         }
         return nil
-    }
+    }()
     
     public class func fetch(withName: String) -> MWList? {
         
@@ -67,6 +66,7 @@ public class MWList: NSManagedObject {
         let query = MWWatchlistRawQuery()
         
         query.callback = {(ret: MWWRReturn) in
+            DispatchQueue.main.sync {
             for title in ret.titles {
                 let fetch = MWPage.newFetchRequest()
                 fetch.predicate = NSPredicate(format: "title == %@", title)
@@ -74,12 +74,13 @@ public class MWList: NSManagedObject {
                     let fetched = try MWDataController.defaultController?.managedObjectContext.fetch(fetch)
                     if(fetched?.count == 0) {
                         let new = NSEntityDescription.insertNewObject(forEntityName: "MWPage", into: (MWDataController.defaultController?.managedObjectContext)!) as! MWPage
+                        
                         //new.pageid = Int32(obj.pageid!)
                         new.title = title
+                        new.inWiki = MWInstance.enWiki
                         
                         MWList.watchlist?.addToPages(new)
                         
-                        //try! MWDataController.defaultController?.managedObjectContext.save()
                         
                         
                     }
@@ -89,10 +90,18 @@ public class MWList: NSManagedObject {
                 } catch {
                     print("Error")
                 }
+                }
+                try! MWDataController.defaultController?.managedObjectContext.save()
                 
+                let fetch = MWPage.newFetchRequest()
+                fetch.predicate = NSPredicate(format: "title == %@", "Citalopram")
+                
+                let fetched = try! MWDataController.defaultController?.managedObjectContext.fetch(fetch)
+                
+                callback?()
             }
             
-            callback?()
+            
         }
         
         query.performIn(MWInstance.enWiki)

@@ -13,9 +13,10 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="categoryChildren" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MWPage" inverseName="categoryChildren" inverseEntity="MWPage" syncable="YES"/>
         <relationship name="inCategory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MWPage" inverseName="inCategory" inverseEntity="MWPage" syncable="YES"/>
+        <relationship name="inWiki" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MWInstance" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MWPage" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="MWPage" positionX="-63" positionY="-18" width="128" height="120"/>
         <element name="MWList" positionX="-36" positionY="45" width="128" height="75"/>
         <element name="MWInstance" positionX="-18" positionY="54" width="128" height="75"/>
     </elements>

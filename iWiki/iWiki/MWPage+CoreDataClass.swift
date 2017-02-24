@@ -11,5 +11,7 @@ import CoreData
 
 
 public class MWPage: NSManagedObject {
-
+    public class func newFetchRequest() -> NSFetchRequest<MWPage> {
+        return NSFetchRequest<MWPage>(entityName: "MWPage");
+    }
 }

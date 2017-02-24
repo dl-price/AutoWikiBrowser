@@ -775,6 +775,7 @@
                                             </tableColumns>
                                             <connections>
                                                 <binding destination="Gi0-2b-lRE" name="content" keyPath="arrangedObjects" id="EAM-K5-7Rx"/>
+                                                <outlet property="delegate" destination="T0q-vJ-8we" id="6T2-vO-ghw"/>
                                             </connections>
                                         </outlineView>
                                     </subviews>
@@ -819,27 +820,6 @@
                 <customObject id="XUE-jx-E2G" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-263" y="1278"/>
-        </scene>
-        <!--Tab View Controller-->
-        <scene sceneID="w69-HC-iiT">
-            <objects>
-                <tabViewController tabStyle="unspecified" id="Dof-I7-4Di" sceneMemberID="viewController">
-                    <tabViewItems>
-                        <tabViewItem id="6gR-c2-6np"/>
-                    </tabViewItems>
-                    <tabView key="tabView" type="noTabsNoBorder" id="gN1-0I-FE7">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <font key="font" metaFont="message"/>
-                        <tabViewItems/>
-                    </tabView>
-                    <connections>
-                        <segue destination="T0q-vJ-8we" kind="relationship" relationship="tabItems" id="NSG-9i-rEC"/>
-                    </connections>
-                </tabViewController>
-                <customObject id="Kr4-9P-Onz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="283" y="728"/>
         </scene>
         <!--Filter Controller-->
         <scene sceneID="qFc-ey-IIt">
@@ -911,10 +891,10 @@ DQ
             </objects>
             <point key="canvasLocation" x="389" y="1273"/>
         </scene>
-        <!--View Controller-->
+        <!--Uber View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="AutoWikiBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="UberViewController" customModule="AutoWikiBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="849" height="691"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -931,7 +911,7 @@ DQ
                                                 <rect key="frame" x="0.0" y="0.0" width="252" height="691"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <connections>
-                                                    <segue destination="Dof-I7-4Di" kind="embed" id="p4Y-7I-vbP"/>
+                                                    <segue destination="T0q-vJ-8we" kind="embed" identifier="embedSourceViewInLeftPanel" id="MNb-Lg-18M"/>
                                                 </connections>
                                             </containerView>
                                         </subviews>
@@ -944,7 +924,7 @@ DQ
                                                 <rect key="frame" x="0.0" y="0.0" width="332" height="527.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <connections>
-                                                    <segue destination="40t-xt-2d1" kind="embed" id="xRh-8S-Pal"/>
+                                                    <segue destination="40t-xt-2d1" kind="embed" identifier="embedPrimaryController" id="7RF-Si-lrG"/>
                                                 </connections>
                                             </containerView>
                                             <customView fixedFrame="YES" id="pt2-b0-d1Y">
@@ -954,7 +934,7 @@ DQ
                                         </subviews>
                                         <holdingPriorities>
                                             <real value="1"/>
-                                            <real value="403"/>
+                                            <real value="468"/>
                                         </holdingPriorities>
                                     </splitView>
                                     <customView fixedFrame="YES" id="VKw-48-aGa">
