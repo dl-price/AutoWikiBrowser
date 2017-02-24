@@ -605,6 +605,7 @@
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="wikiSidebar:" target="Ady-hI-5gd" id="hB8-Gw-tVx"/>
+                                                <binding destination="hnw-xV-0zn" name="value" keyPath="self.mainWindow.contentViewController.primaryContainer.activeSnippet.webView.showingSidebar" id="1DW-cv-BTu"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="hB3-LF-h0Y"/>
@@ -668,6 +669,7 @@
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="AutoWikiBrowser" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="Eym-1e-BaM"/>
             </objects>
             <point key="canvasLocation" x="-318" y="-1"/>
         </scene>
@@ -680,22 +682,27 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="448" height="278"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <toolbar key="toolbar" implicitIdentifier="6E82E155-63D0-40A4-8339-4F1203E99B16" displayMode="iconAndLabel" sizeMode="regular" id="eN2-MC-k3N">
+                        <toolbar key="toolbar" implicitIdentifier="356CF418-8282-4AB1-9EB2-709167CBCC14" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="XHN-95-p1J">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="f50-hg-Lw8"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="qmo-On-LJI"/>
-                                <toolbarItem implicitItemIdentifier="B6D11150-1F54-46EC-BC82-AFA93FE36EA1" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" image="LeftNav" id="lOU-ar-nt9"/>
-                                <toolbarItem implicitItemIdentifier="3D375C0D-09FC-4CBB-AAEF-ACCAF0323814" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" image="BottomNav" id="1dx-OC-Bq0"/>
-                                <toolbarItem implicitItemIdentifier="13F5DCB3-7CDD-4F46-B037-9B60504F2620" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" image="RightNav" id="Ttx-zV-9aa"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="WgO-Ax-y9k"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="IdK-V2-0Dc"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="adl-FT-Vg9"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="qmg-vn-9JC"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="OtC-qd-ga5"/>
                             </allowedToolbarItems>
-                            <defaultToolbarItems/>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="WgO-Ax-y9k"/>
+                                <toolbarItem reference="IdK-V2-0Dc"/>
+                                <toolbarItem reference="OtC-qd-ga5"/>
+                                <toolbarItem reference="adl-FT-Vg9"/>
+                            </defaultToolbarItems>
                             <connections>
-                                <outlet property="delegate" destination="IQv-IB-iLA" id="SQX-Yj-08x"/>
+                                <outlet property="delegate" destination="B8D-0N-5wS" id="pJl-Xo-pdx"/>
                             </connections>
                         </toolbar>
                     </window>
                     <connections>
-                        <outlet property="toolbar" destination="eN2-MC-k3N" id="Esv-Qf-CYg"/>
+                        <outlet property="toolbar" destination="XHN-95-p1J" id="0NG-LN-Hht"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
@@ -953,9 +960,4 @@ DQ
             <point key="canvasLocation" x="1025" y="-152"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="BottomNav" width="50" height="50"/>
-        <image name="LeftNav" width="50" height="50"/>
-        <image name="RightNav" width="50" height="50"/>
-    </resources>
 </document>

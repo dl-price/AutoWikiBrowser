@@ -13,6 +13,8 @@ import iWiki
 
 class MainContainerController : NSViewController {
     
+    var activeSnippet : SnippetController? { return snippetControllers[0] }
+    
     var mainSplitController : NSSplitViewController? {
         get {
             return childViewControllers[0] as? NSSplitViewController
@@ -120,7 +122,7 @@ class MainContainerController : NSViewController {
 }
 
 class SnippetController : NSViewController {
-    @IBOutlet var webView : MWWebView?
+    @IBOutlet public var webView : MWWebView?
     
     override func viewDidAppear() {
         super.viewDidAppear()
@@ -128,8 +130,8 @@ class SnippetController : NSViewController {
          webView?.mainFrame.load(URLRequest(url: URL(string: "http://en.wikipedia.org")!))
     }
     
-    func wikiSidebar(_ obj:Any) {
-        webView!.sidebarHidden = !(webView!.sidebarHidden)
+    /*func wikiSidebar(_ obj:Any) {
+        webView!.showingSidebar = !(webView!.showingSidebar)
         
         let task = MWRevisionsQuery()
         
@@ -140,7 +142,7 @@ class SnippetController : NSViewController {
         }
         
         task.performIn(MWInstance.enWiki)
-    }
+    }*/
 }
 
 class FilterController : UberViewController {

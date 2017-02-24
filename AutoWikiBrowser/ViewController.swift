@@ -16,7 +16,6 @@ class UberViewController: NSViewController, NSSplitViewDelegate {
     @IBOutlet weak var centerPanel : NSView?
     @IBOutlet weak var rightPanel : NSView?
     weak var primaryContainer : MainContainerController?
-    //weak var mainContainer { primaryView?.subviews[0].pare }
 
 
     override func viewDidLoad() {

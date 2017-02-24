@@ -13,6 +13,8 @@ import iWiki
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     let dataController = MWDataController()
+    
+    @IBOutlet var mainWindow : MainWindowController?
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
@@ -20,6 +22,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         //MWInstance.defaultInstance.doQuery(thing)
         
         let req = MWPage.newFetchRequest()
+        
+        //mainWindow = (NSApplication.shared().mainWindow?.contentViewController as? UberViewController)?.primaryContainer?.snippetControllers[0].webView?.sidebarHidden
 
     }
 

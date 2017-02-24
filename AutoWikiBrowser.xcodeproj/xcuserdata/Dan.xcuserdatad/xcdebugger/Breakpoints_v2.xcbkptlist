@@ -291,13 +291,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AutoWikiBrowser/MWWebView.swift"
-            timestampString = "509649997.140861"
+            filePath = "AutoWikiBrowser/MainContainer.swift"
+            timestampString = "509656493.469076"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "MWWebView"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "SnippetController"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
@@ -307,13 +307,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AutoWikiBrowser/MainContainer.swift"
-            timestampString = "509650067.074969"
+            filePath = "AutoWikiBrowser/MWWebView.swift"
+            timestampString = "509657760.013481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "wikiSidebar(_:)"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "webView(_:resource:didReceive:from:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -324,11 +324,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AutoWikiBrowser/MWWebView.swift"
-            timestampString = "509650470.840624"
+            timestampString = "509657760.013481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "MWWebView"
             landmarkType = "3">
          </BreakpointContent>
@@ -340,12 +340,108 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AutoWikiBrowser/MWWebView.swift"
-            timestampString = "509651581.573904"
+            timestampString = "509657760.013481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "webView(_:resource:didReceive:from:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "MWWebView"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoWikiBrowser/MWWebView.swift"
+            timestampString = "509657760.013481"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "MWWebView"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoWikiBrowser/MainWindowController.swift"
+            timestampString = "509660944.731442"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "toolbarDefaultItemIdentifiers(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoWikiBrowser/MainWindowController.swift"
+            timestampString = "509660944.731442"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "toolbar(_:itemForItemIdentifier:willBeInsertedIntoToolbar:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoWikiBrowser/MainWindowController.swift"
+            timestampString = "509660944.731442"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "toolbarAllowedItemIdentifiers(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoWikiBrowser/MainWindowController.swift"
+            timestampString = "509661190.442883"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "init(itemIdentifier:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoWikiBrowser/MainWindowController.swift"
+            timestampString = "509661190.442883"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "toolbar(_:itemForItemIdentifier:willBeInsertedIntoToolbar:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
