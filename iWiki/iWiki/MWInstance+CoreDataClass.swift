@@ -33,7 +33,6 @@ public class MWInstance: NSManagedObject {
         
         return instance!
         
-        
     }
     
     public class func fetch(forName: String) -> MWInstance? {

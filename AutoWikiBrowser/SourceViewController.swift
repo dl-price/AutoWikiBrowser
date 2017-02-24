@@ -8,6 +8,7 @@
 
 import Foundation
 import AppKit
+import iWiki
 
 class SourceViewController : NSViewController {
     
@@ -18,13 +19,18 @@ class SourceViewController : NSViewController {
     override func viewDidLoad() {
         
         
-        if let count = (outlineTree?.arrangedObjects as? [Node])?.count { if(count > 0) { return } }
-            let n = Node(data: "yes")
-            
-            n.children.append(Node(data: "yes1"))
-            n.children.append(Node(data: "yes2"))
-            
-            outlineTree?.addObject(n)
+        //if let count = (outlineTree?.arrangedObjects as? [Node])?.count { if(count > 0) { return } }
+        
+        let watchlist = MWList.watchlist
+        
+        watchlist?.updateFromWiki(callback: {() in
+            DispatchQueue.main.async {
+            for page in (watchlist?.pages?.allObjects as? [MWPage])! {
+                let n = Node(data: page.title! )
+                    self.outlineTree?.addObject(n)
+            }
+            }
+        })
         
         
         

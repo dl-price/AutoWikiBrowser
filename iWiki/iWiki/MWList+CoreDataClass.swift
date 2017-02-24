@@ -81,7 +81,7 @@ public class MWList: NSManagedObject {
                         
                         //try! MWDataController.defaultController?.managedObjectContext.save()
                         
-                        callback?()
+                        
                     }
                     else {
                         print("Item should be updated here")
@@ -92,11 +92,7 @@ public class MWList: NSManagedObject {
                 
             }
             
-            let array = MWList.watchlist?.pages?.allObjects as? [MWPage]
-            
-            for obj in array! {
-                print(obj.title)
-            }
+            callback?()
         }
         
         query.performIn(MWInstance.enWiki)
