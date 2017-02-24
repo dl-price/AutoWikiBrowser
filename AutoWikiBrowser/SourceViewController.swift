@@ -9,6 +9,7 @@
 import Foundation
 import AppKit
 import iWiki
+import CoreData
 
 class SourceViewController : NSViewController, NSOutlineViewDelegate {
     
@@ -20,23 +21,52 @@ class SourceViewController : NSViewController, NSOutlineViewDelegate {
     
     override func viewDidLoad() {
         
+        NotificationCenter.default.addObserver(self, selector: #selector(doThing(notification:)), name: NSNotification.Name.NSManagedObjectContextObjectsDidChange  , object: nil)
+        
         
         //if let count = (outlineTree?.arrangedObjects as? [Node])?.count { if(count > 0) { return } }
         
         let watchlist = MWList.watchlist
         
-        watchlist?.updateFromWiki(callback: {() in
-            for page in (watchlist?.pages?.allObjects as? [MWPage])! {
-                let n = Node(data: page.title! )
-                n.instance = page.inWiki
+        watchlist?.updateFromWiki(callback: { 
+            for page in (watchlist?.pages as! Set<MWPage>) {
+                self.addRoot(root: page)
+                
+            }
+        })
+       
+    }
+    
+    private func addRoot(root: MWPage) {
+        let n = Node(data: root.title! )
+        n.instance = root.inWiki
+        self.outlineTree?.addObject(n)
+    }
+    
+    
+    
+    public func doThing(notification: Notification) {
+        guard let userInfo = notification.userInfo else { return }
+        
+        
+        if let inserts = userInfo[NSUpdatedObjectsKey] as? Set<MWPage>, inserts.count > 0 {
+            for page in inserts {
+                addRoot(root: page)
+
+            }
+        }
+        
+        /*let talk = Node(data: "talk")
+        self.outlineTree?.addObject(talk)
+        for page in (watchlist?.pages?.allObjects as? [MWPage])! {
+            let n = Node(data: page.title! )
+            n.instance = page.inWiki
+            if(page.title?.hasPrefix("Talk:"))! {
+                talk.children.append(n)
+            } else {
                 self.outlineTree?.addObject(n)
             }
-            
-        })
-        
-        
-        
-       
+        }*/
     }
     
     func outlineViewSelectionDidChange(_ notification: Notification) {
