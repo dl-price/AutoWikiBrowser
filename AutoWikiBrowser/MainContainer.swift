@@ -166,11 +166,7 @@ class FilterController : ViewController {
         cat.performIn(MWInstance.defaultInstance)
         }
         
-        let query = MWWatchlistRawQuery()
-        
-        query.limit = 500
-        
-        query.performIn(MWInstance.defaultInstance)
+        MWList.watchlist?.updateFromWiki(callback: nil)
         
         view.window?.close()
     }

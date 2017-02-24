@@ -277,6 +277,7 @@ public class MWWatchlistRawQuery : MWListQuery<MWWRReturn> {
     override public init() {
         super.init()
         list = "watchlistraw"
+        limit = 500
     }
     override public var queryItems: [URLQueryItem] {
         var queryItems = super.queryItems
@@ -284,37 +285,6 @@ public class MWWatchlistRawQuery : MWListQuery<MWWRReturn> {
         queryItems.append(URLQueryItem(name: "wrlimit", value: limit?.description))
         
         return queryItems
-    }
-    
-    override func onReceived(ret: MWWRReturn) {
-        for title in ret.titles {
-            let fetch = MWPage.newFetchRequest()
-            fetch.predicate = NSPredicate(format: "title == %@", title)
-            do {
-                let fetched = try MWDataController.defaultController?.managedObjectContext.fetch(fetch)
-                if(fetched?.count == 0) {
-                    let new = NSEntityDescription.insertNewObject(forEntityName: "MWPage", into: (MWDataController.defaultController?.managedObjectContext)!) as! MWPage
-                    //new.pageid = Int32(obj.pageid!)
-                    new.title = title
-                    
-                    MWList.watchlist?.addToPages(new)
-                    
-                    try! MWDataController.defaultController?.managedObjectContext.save()
-                }
-                else {
-                    print("Item should be updated here")
-                }
-            } catch {
-                print("Error")
-            }
-            
-        }
-        
-        let array = MWList.watchlist?.pages?.allObjects as? [MWPage]
-        
-        for obj in array! {
-            print(obj.title)
-        }
     }
 }
 
