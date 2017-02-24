@@ -9,7 +9,7 @@
 import Foundation
 import WebKit
 
-class MWWebView : WebView, WebFrameLoadDelegate {
+class MWWebView : WebView, WebResourceLoadDelegate {
     
     @IBInspectable var alwaysHideSidebar : Bool = false
     
@@ -21,22 +21,26 @@ class MWWebView : WebView, WebFrameLoadDelegate {
             windowScriptObject.evaluateWebScript("$('.mw-body').css('margin-left', '\(css)');$('#mw-navigation').css('display','\(css2)');$('#mw-page-base').css('display','\(css2)');")
         }
         get {
+            if(windowScriptObject.evaluateWebScript("$('#mw-navigation').css('display');") as! String == "none") {
+                return true
+                }
             return false
         }
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        frameLoadDelegate = self
+        resourceLoadDelegate = self
     }
     
-    func webView(_ sender: WebView!, didFinishLoadFor frame: WebFrame!) {
+    func webView(_: WebView!, resource: Any!, didReceive: URLResponse!, from: WebDataSource!) {
         if(alwaysHideSidebar) {
-            sidebarHidden = true
-        }
-    }
-    
-    func test(_ sender: Any?) {
-        print("Success")
+            if let httpResponse = didReceive as? HTTPURLResponse { if let content = httpResponse.allHeaderFields["Content-Type"] as? String {
+                NSLog(content)
+                if(!content.hasPrefix("application/json")) {
+                        sidebarHidden = true
+                }
+                
+                }}}
     }
 }

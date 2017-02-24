@@ -62,6 +62,13 @@ class MainContainerController : NSViewController {
         return nil
     }
     
+    func snapContext() {
+        mainSplitController?.splitViewItems[1].isCollapsed = true
+        childSplitController[0].splitViewItems[1].isCollapsed = true
+        snippetControllers[0].webView?.alwaysHideSidebar = true
+            
+    }
+    
     override func viewDidLoad() {
         mainSplitController?.view.translatesAutoresizingMaskIntoConstraints = true
         for index in 0...1 {
@@ -79,6 +86,8 @@ class MainContainerController : NSViewController {
     
     override func viewWillAppear() {
         super.viewWillAppear()
+        
+        snapContext()
         
         //mainSplitController?.splitViewItems[1].isCollapsed = true
         //(mainSplitController?.childViewControllers[0] as? NSSplitViewController)?.splitViewItems[1].animator().isCollapsed = true
@@ -120,15 +129,14 @@ class SnippetController : NSViewController {
     }
     
     func wikiSidebar(_ obj:Any) {
-        webView!.sidebarHidden = true
+        webView!.sidebarHidden = !(webView!.sidebarHidden)
         
-        var task = MWRevisionsQuery()
+        let task = MWRevisionsQuery()
         
         task.titles = "Medicine"
         task.limit = 500
         
         task.callback = {(new : MWReturn) in
-            print(new.json)
         }
         
         task.performIn(MWInstance.enWiki)
