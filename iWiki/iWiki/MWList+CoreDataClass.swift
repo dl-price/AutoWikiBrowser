@@ -79,7 +79,7 @@ public class MWList: NSManagedObject {
                         
                         MWList.watchlist?.addToPages(new)
                         
-                        try! MWDataController.defaultController?.managedObjectContext.save()
+                        //try! MWDataController.defaultController?.managedObjectContext.save()
                         
                         callback?()
                     }
@@ -99,10 +99,6 @@ public class MWList: NSManagedObject {
             }
         }
         
-        query.performIn(MWInstance.defaultInstance)
-        
-        
+        query.performIn(MWInstance.enWiki)
     }
-    
-    
 }

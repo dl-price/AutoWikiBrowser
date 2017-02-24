@@ -9,30 +9,6 @@
 import Foundation
 import CoreData
 
-
-public class MWInstance {
-    public let sessionConfig = URLSessionConfiguration.default
-    public let session : URLSession
-    public static var defaultInstance = MWInstance()
-    public let rootURL : NSURL
-    public var urlHost : String {
-        get {
-            return "https://" + (URLComponents(string: rootURL.absoluteString!)?.host)!
-        }
-    }
-    
-    public init() {
-        session = URLSession(configuration: sessionConfig)
-        rootURL = NSURL(string: "https://en.wikipedia.org/w/api.php")!
-    }
-    
-    public func doQuery(_ query:MWBaseQuery<MWReturn>) {
-        
-        query.performIn(self)
-    }
-    
-}
-
 public class MWBaseQuery<ReturnSub:MWReturn> {
     public var utf8 = true
     public var format = "json"
@@ -67,7 +43,7 @@ public class MWBaseQuery<ReturnSub:MWReturn> {
     }
     
     internal func performDataTask(_ instance: MWInstance) {
-        var partUrl = URLComponents(url: instance.rootURL.absoluteURL!, resolvingAgainstBaseURL: false)!
+        var partUrl = URLComponents(url: (instance.rootURL?.absoluteURL!)!, resolvingAgainstBaseURL: false)!
         partUrl.queryItems = queryItems
         
         var request : URLRequest = URLRequest(url: partUrl.url!)
@@ -180,8 +156,6 @@ public class MWLogin : MWBaseQuery<MWReturn> {
             
             super.performDataTask(instance)
         }
-        
-        instance.doQuery(task)
     }
  }
 

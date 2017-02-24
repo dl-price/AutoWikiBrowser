@@ -131,7 +131,7 @@ class SnippetController : NSViewController {
             print(new.json)
         }
         
-        MWInstance.defaultInstance.doQuery(task)
+        task.performIn(MWInstance.enWiki)
     }
 }
 
@@ -158,12 +158,12 @@ class FilterController : ViewController {
         cat.callback = {(ret : MWCMReturn) in
             
             if(cat.moreAvailable) {
-                cat.performIn(MWInstance.defaultInstance)
+                cat.performIn(MWInstance.enWiki)
             }
             
         }
         
-        cat.performIn(MWInstance.defaultInstance)
+        cat.performIn(MWInstance.enWiki)
         }
         
         MWList.watchlist?.updateFromWiki(callback: nil)
