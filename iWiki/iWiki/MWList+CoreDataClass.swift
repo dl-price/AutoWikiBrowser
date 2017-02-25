@@ -93,11 +93,6 @@ public class MWList: NSManagedObject {
                 }
                 try! MWDataController.defaultController?.managedObjectContext.save()
                 
-                let fetch = MWPage.newFetchRequest()
-                fetch.predicate = NSPredicate(format: "title == %@", "Citalopram")
-                
-                let fetched = try! MWDataController.defaultController?.managedObjectContext.fetch(fetch)
-                
                 callback?()
             }
             

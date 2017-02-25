@@ -1,23 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="MWCategory" representedClassName="MWCategory" parentEntity="MWPage" syncable="YES" codeGenerationType="class"/>
+    <entity name="MWCategory" representedClassName="MWCategory" parentEntity="MWPage" syncable="YES" codeGenerationType="class">
+        <relationship name="subpages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MWPage" inverseName="inCategories" inverseEntity="MWPage" syncable="YES"/>
+    </entity>
     <entity name="MWInstance" representedClassName=".MWInstance" syncable="YES" codeGenerationType="category">
         <attribute name="apiURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="pages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MWPage" inverseName="inWiki" inverseEntity="MWPage" syncable="YES"/>
     </entity>
     <entity name="MWList" representedClassName=".MWList" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="pages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MWPage" syncable="YES"/>
+        <relationship name="pages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MWPage" inverseName="lists" inverseEntity="MWPage" syncable="YES"/>
     </entity>
     <entity name="MWPage" representedClassName=".MWPage" syncable="YES">
         <attribute name="pageid" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="inWiki" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MWInstance" syncable="YES"/>
+        <relationship name="inCategories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MWCategory" inverseName="subpages" inverseEntity="MWCategory" syncable="YES"/>
+        <relationship name="inWiki" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MWInstance" inverseName="pages" inverseEntity="MWInstance" syncable="YES"/>
+        <relationship name="lists" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MWList" inverseName="pages" inverseEntity="MWList" syncable="YES"/>
+        <relationship name="revisions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MWRevision" inverseName="page" inverseEntity="MWRevision" syncable="YES"/>
+    </entity>
+    <entity name="MWRevision" representedClassName="MWRevision" syncable="YES" codeGenerationType="class">
+        <attribute name="flags" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="revisionid" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="page" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MWPage" inverseName="revisions" inverseEntity="MWPage" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MWInstance" positionX="-18" positionY="54" width="128" height="75"/>
+        <element name="MWInstance" positionX="-18" positionY="54" width="128" height="90"/>
         <element name="MWList" positionX="-36" positionY="45" width="128" height="75"/>
-        <element name="MWPage" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="MWCategory" positionX="-27" positionY="45" width="128" height="45"/>
+        <element name="MWPage" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="MWCategory" positionX="-27" positionY="45" width="128" height="60"/>
+        <element name="MWRevision" positionX="-18" positionY="63" width="128" height="105"/>
     </elements>
 </model>

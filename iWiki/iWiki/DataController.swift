@@ -13,7 +13,7 @@ public class MWDataController: NSObject {
     
     public var managedObjectContext : NSManagedObjectContext
     
-    internal static var defaultController : MWDataController?
+    public static var defaultController : MWDataController?
     
     public override init() {
         

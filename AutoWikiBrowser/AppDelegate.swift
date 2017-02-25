@@ -18,12 +18,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        
-        //MWInstance.defaultInstance.doQuery(thing)
-        
-        let req = MWPage.newFetchRequest()
-        
-        //mainWindow = (NSApplication.shared().mainWindow?.contentViewController as? UberViewController)?.primaryContainer?.snippetControllers[0].webView?.sidebarHidden
 
     }
 
