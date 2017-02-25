@@ -28,19 +28,23 @@ class SourceViewController : NSViewController, NSOutlineViewDelegate {
         
         let watchlist = MWList.watchlist
         
-        watchlist?.updateFromWiki(callback: { 
-            for page in (watchlist?.pages as! Set<MWPage>) {
+        watchlist?.updateFromWiki(callback: {
+            
+            self.outlineTree?.fetch(nil)
+            /*for page in (watchlist?.pages as! Set<MWPage>) {
                 self.addRoot(root: page)
                 
-            }
+            }*/
+            
         })
        
     }
     
     private func addRoot(root: MWPage) {
-        let n = Node(data: root.title! )
+        /*let n = Node(data: root.title! )
         n.instance = root.inWiki
-        self.outlineTree?.addObject(n)
+        self.outlineTree?.addObject(n)*/
+        
     }
     
     

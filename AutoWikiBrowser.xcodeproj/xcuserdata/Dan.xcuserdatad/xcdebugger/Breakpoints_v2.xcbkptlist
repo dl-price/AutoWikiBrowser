@@ -276,11 +276,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AutoWikiBrowser/SourceViewController.swift"
-            timestampString = "509642346.360534"
+            timestampString = "509726982.912071"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "doThing(notification:)"
             landmarkType = "7">
          </BreakpointContent>
