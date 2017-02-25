@@ -790,7 +790,7 @@
                 </viewController>
                 <customObject id="OEu-j2-Z15" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="8s5-v7-eJg" customClass="AppDelegate" customModule="AutoWikiBrowser" customModuleProvider="target"/>
-                <treeController mode="entity" entityName="MWPage" fetchPredicateFormat="" automaticallyPreparesContent="YES" childrenKeyPath="categoryChildren" id="Gi0-2b-lRE">
+                <treeController mode="entity" entityName="MWPage" fetchPredicateFormat="" automaticallyPreparesContent="YES" childrenKeyPath="hasChildren" id="Gi0-2b-lRE">
                     <connections>
                         <binding destination="8s5-v7-eJg" name="managedObjectContext" keyPath="self.dataController.managedObjectContext" id="4fK-f7-pGj"/>
                     </connections>

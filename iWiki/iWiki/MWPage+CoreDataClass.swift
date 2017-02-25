@@ -16,4 +16,6 @@ public class MWPage: NSManagedObject {
     }
     
     public func isLeaf() -> Bool { return true }
+    
+    public func hasChildren() -> [Any] { return [] }
 }
