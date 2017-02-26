@@ -30,6 +30,7 @@ public class MWDataController: NSObject {
         managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         
         managedObjectContext.persistentStoreCoordinator = psc
+        managedObjectContext.retainsRegisteredObjects = true
         
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         

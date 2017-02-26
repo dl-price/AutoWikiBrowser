@@ -67,6 +67,7 @@ public class MWList: NSManagedObject {
         
         query.callback = {(ret: MWWRReturn) in
             DispatchQueue.main.sync {
+                var inserted = [MWPage]()
             for title in ret.titles {
                 let fetch = MWPage.newFetchRequest()
                 fetch.predicate = NSPredicate(format: "title == %@", title)
@@ -81,6 +82,10 @@ public class MWList: NSManagedObject {
                         
                         MWList.watchlist?.addToPages(new)
                         
+                        inserted.append(new)
+                        
+                        
+                        
                         
                         
                     }
@@ -91,10 +96,13 @@ public class MWList: NSManagedObject {
                     print("Error")
                 }
                 }
-                try! MWDataController.defaultController?.managedObjectContext.save()
+                
                 
                 callback?()
+                
+                try! MWDataController.defaultController?.managedObjectContext.save()
             }
+            
             
             
         }

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Ribbon Controller-->
+        <scene sceneID="83I-6n-wpf">
+            <objects>
+                <tabViewController storyboardIdentifier="RibbonController" tabStyle="unspecified" id="JWn-x9-QXT" customClass="RibbonController" customModule="AutoWikiBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem identifier="" id="ez6-CE-Fcu"/>
+                        <tabViewItem identifier="" id="Fsq-UJ-nUg"/>
+                    </tabViewItems>
+                    <viewControllerTransitionOptions key="transitionOptions" slideLeft="YES"/>
+                    <tabView key="tabView" id="ura-b5-JTB">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="96"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <font key="font" metaFont="message"/>
+                        <tabViewItems/>
+                    </tabView>
+                    <connections>
+                        <segue destination="Q9W-lO-TxA" kind="relationship" relationship="tabItems" id="hDV-JN-Q6y"/>
+                        <segue destination="Bbb-Kl-XfS" kind="relationship" relationship="tabItems" id="c83-6y-ri6"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="sd5-ey-hkV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34" y="-4"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KGS-aT-eML">
+            <objects>
+                <viewController storyboardIdentifier="RibbonController" id="Q9W-lO-TxA" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="l30-g5-plv">
+                        <rect key="frame" x="0.0" y="0.0" width="899" height="96"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="BxX-Rc-jhj">
+                                <rect key="frame" x="87" y="0.0" width="5" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </box>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="QFh-b8-wFK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.5" y="-185"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ItG-fm-gg6">
+            <objects>
+                <viewController storyboardIdentifier="RibbonController" id="Bbb-Kl-XfS" sceneMemberID="viewController">
+                    <view key="view" id="sXE-cg-TWC">
+                        <rect key="frame" x="0.0" y="0.0" width="899" height="113"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="Nwc-8M-k03" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.5" y="-12.5"/>
+        </scene>
+    </scenes>
+</document>

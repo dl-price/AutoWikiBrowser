@@ -46,7 +46,6 @@ public class MWCategoryMembers : MWListQuery<MWCMReturn> {
                             new.pageid = Int32(obj.pageid!)
                             new.title = obj.title
                             
-                            try! ctrl.managedObjectContext.save()
                     }
                     else {
                         print("Item should be updated here")
@@ -56,7 +55,6 @@ public class MWCategoryMembers : MWListQuery<MWCMReturn> {
                 }
                 
             }
-            //try! ctrl.managedObjectContext.save()
             
         }
     }

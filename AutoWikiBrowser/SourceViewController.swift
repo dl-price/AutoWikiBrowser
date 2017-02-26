@@ -42,8 +42,15 @@ class SourceViewController : NSViewController, NSOutlineViewDelegate {
         
         DispatchQueue.main.async {
             //try! MWDataController.defaultController?.managedObjectContext.save()
-            self.outlineTree?.fetch(nil)
-            print((self.outlineTree?.content as? [MWPage] )?.debugDescription)
+            try! MWDataController.defaultController?.managedObjectContext.fetch(MWPage.newFetchRequest())
+            //self.outlineTree?.fetch(nil)
+            //print(try! MWDataController.defaultController?.managedObjectContext.fetch(MWPage.newFetchRequest()))
+
+                try! self.outlineTree?.fetch(with: MWPage.fetchRequest(), merge: true)
+
+            
+            //print((try! MWDataController.defaultController?.managedObjectContext.fetch(MWPage.newFetchRequest())).debugDescription)
+            //print((self.outlineTree?.content as? [MWPage] )?.debugDescription)
             //self.outlineView.
         }
     }

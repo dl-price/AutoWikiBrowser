@@ -228,11 +228,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWiki/iWiki/MWList+CoreDataClass.swift"
-            timestampString = "509631414.036436"
+            timestampString = "509797107.399557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "updateFromWiki(callback:)"
             landmarkType = "7">
             <Locations>
@@ -404,11 +404,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AutoWikiBrowser/MainWindowController.swift"
-            timestampString = "509661190.442883"
+            timestampString = "509803333.309199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "init(itemIdentifier:)"
             landmarkType = "7">
          </BreakpointContent>
