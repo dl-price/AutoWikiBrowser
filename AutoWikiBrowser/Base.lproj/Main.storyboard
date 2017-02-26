@@ -771,11 +771,7 @@
                 </viewController>
                 <customObject id="OEu-j2-Z15" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="8s5-v7-eJg" customClass="AppDelegate" customModule="AutoWikiBrowser" customModuleProvider="target"/>
-                <treeController mode="entity" entityName="MWPage" fetchPredicateFormat="" childrenKeyPath="hasChildren" id="Gi0-2b-lRE">
-                    <connections>
-                        <binding destination="8s5-v7-eJg" name="managedObjectContext" keyPath="self.dataController.managedObjectContext" id="4fK-f7-pGj"/>
-                    </connections>
-                </treeController>
+                <treeController mode="entity" entityName="MWPage" fetchPredicateFormat="" childrenKeyPath="hasChildren" id="Gi0-2b-lRE"/>
             </objects>
             <point key="canvasLocation" x="-298" y="792.5"/>
         </scene>
@@ -787,18 +783,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="849" height="691"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qvy-LA-e5U">
-                                <rect key="frame" x="-7" y="556" width="864" height="141"/>
+                            <tabView fixedFrame="YES" type="noTabsNoBorder" translatesAutoresizingMaskIntoConstraints="NO" id="Qvy-LA-e5U">
+                                <rect key="frame" x="0.0" y="555" width="850" height="116"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="Tab" identifier="1" id="0Bz-Mi-qdd">
                                         <view key="view" ambiguous="YES" id="2lh-b9-hg8">
-                                            <rect key="frame" x="10" y="33" width="858" height="111"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="850" height="116"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpB-tJ-DnC">
-                                                    <rect key="frame" x="18" y="74" width="37" height="17"/>
+                                                    <rect key="frame" x="18" y="79" width="37" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="jkk-rP-obW">
                                                         <font key="font" metaFont="system"/>
@@ -811,11 +807,14 @@
                                     </tabViewItem>
                                     <tabViewItem label="View" identifier="2" id="07u-en-vvW">
                                         <view key="view" id="aWQ-tp-9fD">
-                                            <rect key="frame" x="10" y="33" width="858" height="111"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="850" height="116"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                     </tabViewItem>
                                 </tabViewItems>
+                                <connections>
+                                    <binding destination="XfG-lQ-9wD" name="selectedIndex" keyPath="self.selectedRibbonIndex" id="nEb-Rb-vT1"/>
+                                </connections>
                             </tabView>
                             <splitView fixedFrame="YES" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1ZT-KM-Qyz">
                                 <rect key="frame" x="0.0" y="0.0" width="849" height="557"/>
@@ -866,16 +865,33 @@
                                     <real value="436"/>
                                 </holdingPriorities>
                             </splitView>
+                            <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JwC-s6-mNc">
+                                <rect key="frame" x="367" y="668" width="115" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <segmentedCell key="cell" refusesFirstResponder="YES" borderStyle="border" alignment="left" style="texturedRounded" trackingMode="selectOne" id="lJZ-ev-HYY" customClass="RibbonViewItem">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="Seg 1"/>
+                                        <segment label="Seg 2" selected="YES" tag="1"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="ribbonChanged:" target="XfG-lQ-9wD" id="9kn-Ha-k8U"/>
+                                    <binding destination="XfG-lQ-9wD" name="selectedIndex" keyPath="self.selectedRibbonIndex" id="wRl-nm-Ta4"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="centerPanel" destination="Bai-iC-haG" id="Ygd-eB-gzl"/>
                         <outlet property="leftPanel" destination="1DR-GI-Huo" id="nhW-hS-A8T"/>
                         <outlet property="panelSplit" destination="1ZT-KM-Qyz" id="WHX-ls-HAD"/>
+                        <outlet property="ribbonSegment" destination="JwC-s6-mNc" id="Wc6-u0-HZV"/>
                         <outlet property="rightPanel" destination="VKw-48-aGa" id="ub1-mj-3a7"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="iag-t5-w4F"/>
             </objects>
             <point key="canvasLocation" x="369.5" y="130.5"/>
         </scene>

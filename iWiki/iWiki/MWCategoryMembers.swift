@@ -40,9 +40,9 @@ public class MWCategoryMembers : MWListQuery<MWCMReturn> {
                 let fetch = MWPage.newFetchRequest()
                 fetch.predicate = NSPredicate(format: "pageid == %d", obj.pageid!)
                     do {
-                        let fetched = try ctrl.managedObjectContext.fetch(fetch)
+                        let fetched = try ctrl.tempObjectContext.fetch(fetch)
                         if(fetched.count == 0) {
-                         let new = NSEntityDescription.insertNewObject(forEntityName: "MWPage", into: ctrl.managedObjectContext) as! MWPage
+                         let new = NSEntityDescription.insertNewObject(forEntityName: "MWPage", into: ctrl.tempObjectContext) as! MWPage
                             new.pageid = Int32(obj.pageid!)
                             new.title = obj.title
                             

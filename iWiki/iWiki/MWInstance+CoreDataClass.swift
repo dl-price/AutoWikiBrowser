@@ -22,7 +22,7 @@ public class MWInstance: NSManagedObject {
         var instance = MWInstance.fetch(forName: forName)
         
         if (instance == nil) {
-            instance = NSEntityDescription.insertNewObject(forEntityName: "MWInstance", into: (MWDataController.defaultController?.managedObjectContext)!) as? MWInstance
+            instance = NSEntityDescription.insertNewObject(forEntityName: "MWInstance", into: (MWDataController.defaultController?.tempObjectContext)!) as? MWInstance
             instance!.name = forName
         }
         
@@ -40,7 +40,7 @@ public class MWInstance: NSManagedObject {
         let fetch = MWInstance.newFetchRequest()
         fetch.predicate = NSPredicate(format: "name == %@", forName)
         
-        let fetched = try! MWDataController.defaultController?.managedObjectContext.fetch(fetch)
+        let fetched = try! MWDataController.defaultController?.tempObjectContext.fetch(fetch)
         
         if let _ = fetched {
             if (fetched!.count > 0 ) { return fetched![0] }

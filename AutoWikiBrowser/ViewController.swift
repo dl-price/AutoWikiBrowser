@@ -16,6 +16,12 @@ class UberViewController: NSViewController, NSSplitViewDelegate {
     @IBOutlet weak var centerPanel : NSView?
     @IBOutlet weak var rightPanel : NSView?
     weak var primaryContainer : MainContainerController?
+    @IBOutlet weak var ribbonSegment : NSSegmentedControl?
+    var selectedRibbonIndex : Int = 0
+    
+    @IBAction func ribbonChanged(_ sender: NSSegmentedControl) {
+        selectedRibbonIndex = (sender.selectedSegment)
+    }
 
 
     override func viewDidLoad() {

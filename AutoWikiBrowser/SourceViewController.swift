@@ -21,6 +21,8 @@ class SourceViewController : NSViewController, NSOutlineViewDelegate {
     
     override func viewDidLoad() {
         
+        self.outlineTree?.managedObjectContext = MWDataController.defaultController?.tempObjectContext
+        
         NotificationCenter.default.addObserver(self, selector: #selector(doThing(notification:)), name: NSNotification.Name.NSManagedObjectContextObjectsDidChange  , object: nil)
         
         let watchlist = MWList.watchlist
@@ -42,11 +44,14 @@ class SourceViewController : NSViewController, NSOutlineViewDelegate {
         
         DispatchQueue.main.async {
             //try! MWDataController.defaultController?.managedObjectContext.save()
-            try! MWDataController.defaultController?.managedObjectContext.fetch(MWPage.newFetchRequest())
-            //self.outlineTree?.fetch(nil)
+            //try! MWDataController.defaultController?.managedObjectContext.fetch(MWPage.newFetchRequest())
+            //try! MWDataController.defaultController?.managedObjectContext.save()
+            //self.outlineTree?.managedObjectContext = nil
+            //self.outlineTree?.managedObjectContext = MWDataController.defaultController?.managedObjectContext
+            self.outlineTree?.fetch(nil)
             //print(try! MWDataController.defaultController?.managedObjectContext.fetch(MWPage.newFetchRequest()))
 
-                try! self.outlineTree?.fetch(with: MWPage.fetchRequest(), merge: true)
+                //try! self.outlineTree?.fetch(with: MWPage.fetchRequest(), merge: true)
 
             
             //print((try! MWDataController.defaultController?.managedObjectContext.fetch(MWPage.newFetchRequest())).debugDescription)

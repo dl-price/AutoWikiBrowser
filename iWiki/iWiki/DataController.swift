@@ -11,9 +11,11 @@ import CoreData
 
 public class MWDataController: NSObject {
     
-    public var managedObjectContext : NSManagedObjectContext
+    public var tempObjectContext : NSManagedObjectContext
+    public var permaObjectContext : NSManagedObjectContext
     
     public static var defaultController : MWDataController?
+    
     
     public override init() {
         
@@ -27,10 +29,11 @@ public class MWDataController: NSObject {
         
         let psc = NSPersistentStoreCoordinator(managedObjectModel: mom)
         
-        managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        tempObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        permaObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         
-        managedObjectContext.persistentStoreCoordinator = psc
-        managedObjectContext.retainsRegisteredObjects = true
+        tempObjectContext.persistentStoreCoordinator = psc
+        permaObjectContext.persistentStoreCoordinator = psc
         
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         
@@ -39,6 +42,7 @@ public class MWDataController: NSObject {
         let storeURL = docURL.appendingPathComponent("MWDataModel.sqlite")
         
         do {
+            try psc.addPersistentStore(ofType: NSInMemoryStoreType, configurationName: nil, at: nil, options: nil)
             try psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: nil)
         } catch {
             fatalError("Error migrating store \(error)")

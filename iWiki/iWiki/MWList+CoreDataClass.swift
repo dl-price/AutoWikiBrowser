@@ -17,12 +17,12 @@ public class MWList: NSManagedObject {
         req.predicate = NSPredicate(format: "name == %@", "watchlist")
         
         do {
-            let fetched = try MWDataController.defaultController?.managedObjectContext.fetch(req)
+            let fetched = try MWDataController.defaultController?.tempObjectContext.fetch(req)
             if(fetched?.count == 0) {
-                let new = NSEntityDescription.insertNewObject(forEntityName: "MWList", into: (MWDataController.defaultController?.managedObjectContext)!) as! MWList
+                let new = NSEntityDescription.insertNewObject(forEntityName: "MWList", into: (MWDataController.defaultController?.tempObjectContext)!) as! MWList
                 new.name = "watchlist"
                 
-                try! MWDataController.defaultController?.managedObjectContext.save()
+                try! MWDataController.defaultController?.tempObjectContext.save()
                 
                 return new
             }
@@ -46,7 +46,7 @@ public class MWList: NSManagedObject {
         req.predicate = NSPredicate(format: "name == %@", withName)
         
         do {
-            let fetched = try MWDataController.defaultController?.managedObjectContext.fetch(req)
+            let fetched = try MWDataController.defaultController?.tempObjectContext.fetch(req)
             if(fetched?.count == 1) {
                 return fetched![0]
             }
@@ -72,9 +72,9 @@ public class MWList: NSManagedObject {
                 let fetch = MWPage.newFetchRequest()
                 fetch.predicate = NSPredicate(format: "title == %@", title)
                 do {
-                    let fetched = try MWDataController.defaultController?.managedObjectContext.fetch(fetch)
+                    let fetched = try MWDataController.defaultController?.tempObjectContext.fetch(fetch)
                     if(fetched?.count == 0) {
-                        let new = NSEntityDescription.insertNewObject(forEntityName: "MWPage", into: (MWDataController.defaultController?.managedObjectContext)!) as! MWPage
+                        let new = NSEntityDescription.insertNewObject(forEntityName: "MWPage", into: (MWDataController.defaultController?.tempObjectContext)!) as! MWPage
                         
                         //new.pageid = Int32(obj.pageid!)
                         new.title = title
@@ -100,7 +100,7 @@ public class MWList: NSManagedObject {
                 
                 callback?()
                 
-                try! MWDataController.defaultController?.managedObjectContext.save()
+                try! MWDataController.defaultController?.tempObjectContext.save()
             }
             
             
