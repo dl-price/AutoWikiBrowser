@@ -40,8 +40,8 @@ public class MWPage: NSManagedObject {
             return result[0]
         }
         
+        let newPage = NSEntityDescription.insertNewObject(forEntityName: "MWPage", into: context) as! MWPage
         
-        
-        
+        return newPage    
     }
 }
