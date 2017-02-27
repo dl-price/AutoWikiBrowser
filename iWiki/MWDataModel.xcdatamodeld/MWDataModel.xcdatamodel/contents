@@ -13,7 +13,7 @@
         <relationship name="pages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MWPage" inverseName="lists" inverseEntity="MWPage" syncable="YES"/>
     </entity>
     <entity name="MWPage" representedClassName=".MWPage" syncable="YES">
-        <attribute name="pageid" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pageid" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="inCategories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MWCategory" inverseName="subpages" inverseEntity="MWCategory" syncable="YES"/>
         <relationship name="inWiki" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MWInstance" inverseName="pages" inverseEntity="MWInstance" syncable="YES"/>

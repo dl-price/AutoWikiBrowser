@@ -19,7 +19,7 @@ public class MWPage: NSManagedObject {
     
     public func hasChildren() -> [Any] { return [] }
     
-    public static func fetchOrCreate(withPageId id: Int, inContext context: NSManagedObjectContext) -> MWPage {
+    public static func fetchOrCreate(withPageId id: Int, onWiki wiki: MWInstance, inContext context: NSManagedObjectContext) -> MWPage {
         let request = newFetchRequest()
         
         let predicate = NSPredicate(format: "pageid == %d", id)
@@ -41,7 +41,30 @@ public class MWPage: NSManagedObject {
         }
         
         let newPage = NSEntityDescription.insertNewObject(forEntityName: "MWPage", into: context) as! MWPage
+        newPage.pageid = Int64(id)
+        newPage.inWiki = wiki
         
         return newPage    
     }
+    
+    public func updateFromWiki(callback: () -> Void) {
+        let query = MWPageQuery()
+        
+        query.pageIds.append(Int(pageid))
+        if let _ = title {
+            query.pageTitles.append(title!)
+        }
+        
+        query.callback = {(ret: MWReturn) in
+            callback()
+        }
+        
+        query.performIn(inWiki!)
+        
+    
+        
+        
+    }
+    
+    
 }

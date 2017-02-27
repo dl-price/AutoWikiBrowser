@@ -43,7 +43,7 @@ public class MWCategoryMembers : MWListQuery<MWCMReturn> {
                         let fetched = try ctrl.tempObjectContext.fetch(fetch)
                         if(fetched.count == 0) {
                          let new = NSEntityDescription.insertNewObject(forEntityName: "MWPage", into: ctrl.tempObjectContext) as! MWPage
-                            new.pageid = Int32(obj.pageid!)
+                            new.pageid = Int64(obj.pageid!)
                             new.title = obj.title
                             
                     }

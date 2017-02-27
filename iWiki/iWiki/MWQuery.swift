@@ -42,7 +42,7 @@ public class MWBaseQuery<ReturnSub:MWReturn> {
         performDataTask(instance)
     }
     
-    internal func performDataTask(_ instance: MWInstance) {
+    private func performDataTask(_ instance: MWInstance) {
         var partUrl = URLComponents(url: (instance.rootURL?.absoluteURL!)!, resolvingAgainstBaseURL: false)!
         partUrl.queryItems = queryItems
         
@@ -73,6 +73,40 @@ public class MWBaseQuery<ReturnSub:MWReturn> {
         get {
             return continueToken != nil
         }
+    }
+}
+
+public class MWPageQuery : MWBaseQuery<MWReturn> {
+    public var pageIds = [Int]()
+    public var pageTitles = [String]()
+    public override init() {
+        super.init()
+        
+        action = "query"
+    }
+    
+    override internal var queryItems: [URLQueryItem] {
+        var queryItems = super.queryItems
+        
+        var ids : String?
+        var titles : String?
+        
+        if(pageIds.count > 0) {
+            ids = String()
+            for id in pageIds {
+                ids?.append(id.description + "|")
+            }
+        } else if (pageTitles.count > 0) {
+            titles = String()
+            for title in pageTitles {
+                titles?.append(title.description + "|")
+            }
+        }
+        
+        if let _ = ids { queryItems.append(URLQueryItem(name: "pageids", value: ids))
+            } else if let _ = titles { queryItems.append(URLQueryItem(name: "titles", value: titles)) }
+        
+        return queryItems
     }
 }
 

@@ -2,7 +2,7 @@
 //  MWPage+CoreDataProperties.swift
 //  iWiki
 //
-//  Created by Daniel Price on 24/02/2017.
+//  Created by Daniel Price on 27/02/2017.
 //  Copyright © 2017 Daniel Price. All rights reserved.
 //
 
@@ -16,44 +16,45 @@ extension MWPage {
         return NSFetchRequest<MWPage>(entityName: "MWPage");
     }
 
-    @NSManaged public var pageid: Int32
+    @NSManaged public var pageid: Int64
     @NSManaged public var title: String?
-    @NSManaged public var categoryChildren: NSSet?
-    @NSManaged public var inCategory: NSSet?
+    @NSManaged public var inCategories: NSSet?
     @NSManaged public var inWiki: MWInstance?
+    @NSManaged public var lists: MWList?
+    @NSManaged public var revisions: NSSet?
 
 }
 
-// MARK: Generated accessors for categoryChildren
+// MARK: Generated accessors for inCategories
 extension MWPage {
 
-    @objc(addCategoryChildrenObject:)
-    @NSManaged public func addToCategoryChildren(_ value: MWPage)
+    @objc(addInCategoriesObject:)
+    @NSManaged public func addToInCategories(_ value: MWCategory)
 
-    @objc(removeCategoryChildrenObject:)
-    @NSManaged public func removeFromCategoryChildren(_ value: MWPage)
+    @objc(removeInCategoriesObject:)
+    @NSManaged public func removeFromInCategories(_ value: MWCategory)
 
-    @objc(addCategoryChildren:)
-    @NSManaged public func addToCategoryChildren(_ values: NSSet)
+    @objc(addInCategories:)
+    @NSManaged public func addToInCategories(_ values: NSSet)
 
-    @objc(removeCategoryChildren:)
-    @NSManaged public func removeFromCategoryChildren(_ values: NSSet)
+    @objc(removeInCategories:)
+    @NSManaged public func removeFromInCategories(_ values: NSSet)
 
 }
 
-// MARK: Generated accessors for inCategory
+// MARK: Generated accessors for revisions
 extension MWPage {
 
-    @objc(addInCategoryObject:)
-    @NSManaged public func addToInCategory(_ value: MWPage)
+    @objc(addRevisionsObject:)
+    @NSManaged public func addToRevisions(_ value: MWRevision)
 
-    @objc(removeInCategoryObject:)
-    @NSManaged public func removeFromInCategory(_ value: MWPage)
+    @objc(removeRevisionsObject:)
+    @NSManaged public func removeFromRevisions(_ value: MWRevision)
 
-    @objc(addInCategory:)
-    @NSManaged public func addToInCategory(_ values: NSSet)
+    @objc(addRevisions:)
+    @NSManaged public func addToRevisions(_ values: NSSet)
 
-    @objc(removeInCategory:)
-    @NSManaged public func removeFromInCategory(_ values: NSSet)
+    @objc(removeRevisions:)
+    @NSManaged public func removeFromRevisions(_ values: NSSet)
 
 }
