@@ -42,7 +42,7 @@ public class MWBaseQuery<ReturnSub:MWReturn> {
         performDataTask(instance)
     }
     
-    private func performDataTask(_ instance: MWInstance) {
+    internal func performDataTask(_ instance: MWInstance) {
         var partUrl = URLComponents(url: (instance.rootURL?.absoluteURL!)!, resolvingAgainstBaseURL: false)!
         partUrl.queryItems = queryItems
         

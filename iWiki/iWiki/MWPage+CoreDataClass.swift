@@ -47,7 +47,7 @@ public class MWPage: NSManagedObject {
         return newPage    
     }
     
-    public func updateFromWiki(callback: () -> Void) {
+    public func updateFromWiki(callback: @escaping () -> Void) {
         let query = MWPageQuery()
         
         query.pageIds.append(Int(pageid))

@@ -436,11 +436,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWiki/iWiki/MWPage+CoreDataClass.swift"
-            timestampString = "509920806.761545"
+            timestampString = "509921565.269186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "updateFromWiki(callback:)"
             landmarkType = "7">
          </BreakpointContent>
