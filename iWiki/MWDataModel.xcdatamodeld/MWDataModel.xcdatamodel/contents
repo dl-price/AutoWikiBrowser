@@ -21,16 +21,21 @@
         <relationship name="revisions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MWRevision" inverseName="page" inverseEntity="MWRevision" syncable="YES"/>
     </entity>
     <entity name="MWRevision" representedClassName="MWRevision" syncable="YES" codeGenerationType="class">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="flags" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="revisionid" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="timestamp" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tags" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wikitext" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="page" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MWPage" inverseName="revisions" inverseEntity="MWPage" syncable="YES"/>
     </entity>
     <elements>
+        <element name="MWCategory" positionX="-27" positionY="45" width="128" height="60"/>
         <element name="MWInstance" positionX="-18" positionY="54" width="128" height="90"/>
         <element name="MWList" positionX="-36" positionY="45" width="128" height="75"/>
         <element name="MWPage" positionX="-63" positionY="-18" width="128" height="135"/>
-        <element name="MWCategory" positionX="-27" positionY="45" width="128" height="60"/>
-        <element name="MWRevision" positionX="-18" positionY="63" width="128" height="105"/>
+        <element name="MWRevision" positionX="-18" positionY="63" width="128" height="180"/>
     </elements>
 </model>

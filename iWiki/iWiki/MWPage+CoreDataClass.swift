@@ -18,4 +18,30 @@ public class MWPage: NSManagedObject {
     public func isLeaf() -> Bool { return true }
     
     public func hasChildren() -> [Any] { return [] }
+    
+    public static func fetchOrCreate(withPageId id: Int, inContext context: NSManagedObjectContext) -> MWPage {
+        let request = newFetchRequest()
+        
+        let predicate = NSPredicate(format: "pageid == %d", id)
+        
+        request.predicate = predicate
+        
+        var result = [MWPage]()
+        
+        do {
+            try result = context.fetch(request)
+        } catch {
+            print("Error in MWPage.fetchOrCreate(withPageId, inContext)")
+        }
+        
+        assert(result.count <= 1, "Error")
+        
+        if(result.count == 1) {
+            return result[0]
+        }
+        
+        
+        
+        
+    }
 }
