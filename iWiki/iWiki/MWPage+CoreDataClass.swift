@@ -47,24 +47,46 @@ public class MWPage: NSManagedObject {
         return newPage    
     }
     
-    public func updateFromWiki(callback: @escaping () -> Void) {
-        let query = MWPageQuery()
+    public static func fetchOrCreate(withPageTitle title: String, onWiki wiki: MWInstance, inContext context: NSManagedObjectContext) -> MWPage {
+        let request = newFetchRequest()
         
-        query.pageIds.append(Int(pageid))
-        if let _ = title {
-            query.pageTitles.append(title!)
+        let predicate = NSPredicate(format: "title == %@", title)
+        
+        request.predicate = predicate
+        var result = [MWPage]()
+        
+        do {
+            try result = context.fetch(request)
+        } catch {
+            print("Error in MWPage.fetchOrCreate(withPageTitle, inContext)")
         }
         
-        query.callback = {(ret: MWReturn) in
-            callback()
+        assert(result.count <= 1, "Error")
+        
+        if(result.count == 1) {
+            return result[0]
         }
         
-        query.performIn(inWiki!)
+        let newPage = NSEntityDescription.insertNewObject(forEntityName: "MWPage", into: context) as! MWPage
+        newPage.title = title
+        newPage.inWiki = wiki
         
-    
-        
-        
+        return newPage
     }
     
-    
+    public func updateFromWiki(callback: @escaping () -> Void) {
+        
+        var queryItems = [
+            URLQueryItem(name: "utf8", value: nil),
+            URLQueryItem(name: "format", value: "json"),
+            URLQueryItem(name: "action", value: "query"),
+            URLQueryItem(name: "prop", value: "langlinks|categories|revisions"),
+            URLQueryItem(name: "titles", value: self.title!)
+    ]
+
+        
+        inWiki!.performQuery(withQueryItems: queryItems).then { ret in
+            print(ret.json)
+        }
+    }
 }

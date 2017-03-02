@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AutoWikiBrowser/ViewController.swift"
-            timestampString = "509350783.672334"
+            timestampString = "509924106.368094"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "UberViewController"
             landmarkType = "3">
             <Locations>
@@ -119,11 +119,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AutoWikiBrowser/ViewController.swift"
-            timestampString = "509468126.698452"
+            timestampString = "509924106.368094"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
             landmarkName = "UberViewController"
             landmarkType = "3">
             <Locations>
@@ -212,11 +212,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWiki/iWiki/MWInstance+CoreDataClass.swift"
-            timestampString = "509617665.418412"
+            timestampString = "510114216.27873"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "updateOrCreate(forName:withURL:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -276,11 +276,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AutoWikiBrowser/MainContainer.swift"
-            timestampString = "509656493.469076"
+            timestampString = "510117669.7169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "SnippetController"
             landmarkType = "3">
          </BreakpointContent>
@@ -426,22 +426,6 @@
             startingLineNumber = "37"
             endingLineNumber = "37"
             landmarkName = "toolbar(_:itemForItemIdentifier:willBeInsertedIntoToolbar:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iWiki/iWiki/MWPage+CoreDataClass.swift"
-            timestampString = "509921565.269186"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "updateFromWiki(callback:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

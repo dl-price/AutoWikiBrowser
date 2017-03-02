@@ -8,6 +8,7 @@
 
 import Cocoa
 import WebKit
+import iWiki
 
 class UberViewController: NSViewController, NSSplitViewDelegate {
     
@@ -30,6 +31,10 @@ class UberViewController: NSViewController, NSSplitViewDelegate {
         panelSplit?.delegate = self
         
         // Do any additional setup after loading the view.
+        
+        MWPage.fetchOrCreate(withPageTitle: "Medicine", onWiki: MWInstance.enWiki, inContext: MWDataController.defaultController!.tempObjectContext).updateFromWiki {
+            
+        }
 
     }
 

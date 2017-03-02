@@ -14,6 +14,11 @@
 		372F61BF1E5F68710076B826 /* MWList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F61BD1E5F68710076B826 /* MWList+CoreDataClass.swift */; };
 		372F61C01E5F68710076B826 /* MWList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F61BE1E5F68710076B826 /* MWList+CoreDataProperties.swift */; };
 		372F61C31E601BCF0076B826 /* MWInstance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F61C11E601BCF0076B826 /* MWInstance+CoreDataClass.swift */; };
+		3799F70E1E67B73900F83D1D /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3799F70D1E67B73900F83D1D /* PromiseKit.framework */; };
+		3799F71A1E67E4DD00F83D1D /* MediaWiki.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799F7191E67E4DD00F83D1D /* MediaWiki.swift */; };
+		3799F7201E67EFF800F83D1D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 3799F71F1E67EFF800F83D1D /* Podfile */; };
+		37C360291E688B4200314854 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C360281E688B4200314854 /* Alamofire.framework */; };
+		37C3602F1E688BF400314854 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C3602E1E688BF400314854 /* Request.swift */; };
 		37D5432D1E5DA7FF002218A1 /* iWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D543231E5DA7FF002218A1 /* iWiki.framework */; };
 		37D543321E5DA7FF002218A1 /* iWikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D543311E5DA7FF002218A1 /* iWikiTests.swift */; };
 		37D543341E5DA7FF002218A1 /* iWiki.h in Headers */ = {isa = PBXBuildFile; fileRef = 37D543261E5DA7FF002218A1 /* iWiki.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -40,6 +45,11 @@
 		372F61BD1E5F68710076B826 /* MWList+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MWList+CoreDataClass.swift"; sourceTree = "<group>"; };
 		372F61BE1E5F68710076B826 /* MWList+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MWList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		372F61C11E601BCF0076B826 /* MWInstance+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MWInstance+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3799F70D1E67B73900F83D1D /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = "<group>"; };
+		3799F7191E67E4DD00F83D1D /* MediaWiki.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaWiki.swift; sourceTree = "<group>"; };
+		3799F71F1E67EFF800F83D1D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		37C360281E688B4200314854 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
+		37C3602E1E688BF400314854 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		37D543231E5DA7FF002218A1 /* iWiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iWiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D543261E5DA7FF002218A1 /* iWiki.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iWiki.h; sourceTree = "<group>"; };
 		37D543271E5DA7FF002218A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,7 +57,6 @@
 		37D543311E5DA7FF002218A1 /* iWikiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iWikiTests.swift; sourceTree = "<group>"; };
 		37D543331E5DA7FF002218A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37D543531E5DAB6D002218A1 /* MWQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWQuery.swift; sourceTree = "<group>"; };
-		37D5435F1E5E3CE2002218A1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../../SwiftyJSON.framework; sourceTree = "<group>"; };
 		37D543621E5E3EF4002218A1 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		37D543661E5EB949002218A1 /* MWCategoryMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWCategoryMembers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3799F70E1E67B73900F83D1D /* PromiseKit.framework in Frameworks */,
+				37C360291E688B4200314854 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +85,7 @@
 		37D543191E5DA7FF002218A1 = {
 			isa = PBXGroup;
 			children = (
+				3799F71F1E67EFF800F83D1D /* Podfile */,
 				372F619B1E5F244A0076B826 /* MWDataModel.xcdatamodeld */,
 				37D543251E5DA7FF002218A1 /* iWiki */,
 				37D543301E5DA7FF002218A1 /* iWikiTests */,
@@ -105,6 +117,8 @@
 				37D543621E5E3EF4002218A1 /* SwiftyJSON.swift */,
 				37D543661E5EB949002218A1 /* MWCategoryMembers.swift */,
 				372F619E1E5F24770076B826 /* DataController.swift */,
+				3799F7191E67E4DD00F83D1D /* MediaWiki.swift */,
+				37C3602E1E688BF400314854 /* Request.swift */,
 			);
 			path = iWiki;
 			sourceTree = "<group>";
@@ -121,7 +135,8 @@
 		37D5435E1E5E3CE2002218A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				37D5435F1E5E3CE2002218A1 /* SwiftyJSON.framework */,
+				37C360281E688B4200314854 /* Alamofire.framework */,
+				3799F70D1E67B73900F83D1D /* PromiseKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -222,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3799F7201E67EFF800F83D1D /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				372F61BB1E5F3EE00076B826 /* MWPage+CoreDataClass.swift in Sources */,
+				37C3602F1E688BF400314854 /* Request.swift in Sources */,
 				372F61BF1E5F68710076B826 /* MWList+CoreDataClass.swift in Sources */,
 				372F61C31E601BCF0076B826 /* MWInstance+CoreDataClass.swift in Sources */,
 				372F619F1E5F24770076B826 /* DataController.swift in Sources */,
@@ -249,6 +266,7 @@
 				372F61BC1E5F3EE00076B826 /* MWPage+CoreDataProperties.swift in Sources */,
 				37D543631E5E3EF4002218A1 /* SwiftyJSON.swift in Sources */,
 				37D543671E5EB949002218A1 /* MWCategoryMembers.swift in Sources */,
+				3799F71A1E67E4DD00F83D1D /* MediaWiki.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +398,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = iWiki/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -403,6 +425,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = iWiki/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

@@ -9,6 +9,8 @@
 import Foundation
 import CoreData
 
+
+
 public class MWBaseQuery<ReturnSub:MWReturn> {
     public var utf8 = true
     public var format = "json"
@@ -79,6 +81,8 @@ public class MWBaseQuery<ReturnSub:MWReturn> {
 public class MWPageQuery : MWBaseQuery<MWReturn> {
     public var pageIds = [Int]()
     public var pageTitles = [String]()
+    public var prop: String?
+    public var limit: Int?
     public override init() {
         super.init()
         
@@ -94,17 +98,27 @@ public class MWPageQuery : MWBaseQuery<MWReturn> {
         if(pageIds.count > 0) {
             ids = String()
             for id in pageIds {
-                ids?.append(id.description + "|")
+                if((ids?.characters.count)! > 0) { ids?.append("|") }
+                ids?.append(id.description)
             }
         } else if (pageTitles.count > 0) {
             titles = String()
             for title in pageTitles {
-                titles?.append(title.description + "|")
+                if((titles?.characters.count)! > 0) { titles?.append("|") }
+                titles?.append(title.description)
             }
         }
         
         if let _ = ids { queryItems.append(URLQueryItem(name: "pageids", value: ids))
             } else if let _ = titles { queryItems.append(URLQueryItem(name: "titles", value: titles)) }
+        
+        if let _ = prop {
+            queryItems.append(URLQueryItem(name: "prop", value: prop))
+        }
+        
+        if let _ = limit {
+            queryItems.append(URLQueryItem(name: "lllimit", value: limit?.description))
+        }
         
         return queryItems
     }

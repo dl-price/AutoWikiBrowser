@@ -13,6 +13,8 @@ import iWiki
 
 class MainContainerController : NSViewController {
     
+    var context : MWContext?
+    
     var activeSnippet : SnippetController? { return snippetControllers[0] }
     
     var mainSplitController : NSSplitViewController? {
@@ -84,6 +86,7 @@ class MainContainerController : NSViewController {
                 mainSplitController!.childViewControllers[index].addChildViewController( new2 ) }
         
         }
+        context = MWContext()
     }
     
     override func viewWillAppear() {

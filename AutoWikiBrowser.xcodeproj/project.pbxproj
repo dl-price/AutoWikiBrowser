@@ -16,6 +16,11 @@
 		379970CC1E5AF6BE0086B3D9 /* AutoWikiBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379970CB1E5AF6BE0086B3D9 /* AutoWikiBrowserUITests.swift */; };
 		379970DC1E5B53060086B3D9 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379970DB1E5B53060086B3D9 /* MainWindowController.swift */; };
 		379970DE1E5B60280086B3D9 /* MWWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379970DD1E5B60280086B3D9 /* MWWebView.swift */; };
+		3799F7131E67BA3000F83D1D /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3799F7101E67BA2900F83D1D /* PromiseKit.framework */; };
+		3799F7141E67BA3000F83D1D /* PromiseKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3799F7101E67BA2900F83D1D /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3799F7171E67C4CA00F83D1D /* MWContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799F7161E67C4CA00F83D1D /* MWContext.swift */; };
+		37C3602B1E688B8100314854 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C3602A1E688B8100314854 /* Alamofire.framework */; };
+		37C3602D1E688BA200314854 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37C3602A1E688B8100314854 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		37C8F8FD1E62F84F00469748 /* Ribbon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37C8F8FC1E62F84F00469748 /* Ribbon.storyboard */; };
 		37C8F9001E6300B600469748 /* RibbonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C8F8FF1E6300B600469748 /* RibbonController.swift */; };
 		37D542FD1E5D564D002218A1 /* MainContainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37D542FC1E5D564D002218A1 /* MainContainer.storyboard */; };
@@ -70,6 +75,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				37D543561E5DACDE002218A1 /* iWiki.framework in Embed Frameworks */,
+				37C3602D1E688BA200314854 /* Alamofire.framework in Embed Frameworks */,
+				3799F7141E67BA3000F83D1D /* PromiseKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +99,9 @@
 		379970CD1E5AF6BE0086B3D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		379970DB1E5B53060086B3D9 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		379970DD1E5B60280086B3D9 /* MWWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWWebView.swift; sourceTree = "<group>"; };
+		3799F7101E67BA2900F83D1D /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = iWiki/PromiseKit.framework; sourceTree = "<group>"; };
+		3799F7161E67C4CA00F83D1D /* MWContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWContext.swift; sourceTree = "<group>"; };
+		37C3602A1E688B8100314854 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = iWiki/Alamofire.framework; sourceTree = "<group>"; };
 		37C8F8FC1E62F84F00469748 /* Ribbon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ribbon.storyboard; sourceTree = "<group>"; };
 		37C8F8FF1E6300B600469748 /* RibbonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RibbonController.swift; sourceTree = "<group>"; };
 		37D542FC1E5D564D002218A1 /* MainContainer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainContainer.storyboard; sourceTree = "<group>"; };
@@ -104,6 +114,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3799F7131E67BA3000F83D1D /* PromiseKit.framework in Frameworks */,
+				37C3602B1E688B8100314854 /* Alamofire.framework in Frameworks */,
 				37D543551E5DACDE002218A1 /* iWiki.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +145,7 @@
 				379970BF1E5AF6BE0086B3D9 /* AutoWikiBrowserTests */,
 				379970CA1E5AF6BE0086B3D9 /* AutoWikiBrowserUITests */,
 				379970AC1E5AF6BE0086B3D9 /* Products */,
+				3799F70F1E67BA2900F83D1D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +172,7 @@
 				379970B71E5AF6BE0086B3D9 /* Info.plist */,
 				379970DB1E5B53060086B3D9 /* MainWindowController.swift */,
 				3773393F1E5C713200426E14 /* MainContainer.swift */,
+				3799F7161E67C4CA00F83D1D /* MWContext.swift */,
 				37C8F8FC1E62F84F00469748 /* Ribbon.storyboard */,
 				37C8F8FF1E6300B600469748 /* RibbonController.swift */,
 			);
@@ -181,6 +195,15 @@
 				379970CD1E5AF6BE0086B3D9 /* Info.plist */,
 			);
 			path = AutoWikiBrowserUITests;
+			sourceTree = "<group>";
+		};
+		3799F70F1E67BA2900F83D1D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37C3602A1E688B8100314854 /* Alamofire.framework */,
+				3799F7101E67BA2900F83D1D /* PromiseKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		37D5433E1E5DA7FF002218A1 /* Products */ = {
@@ -358,6 +381,7 @@
 				379970DE1E5B60280086B3D9 /* MWWebView.swift in Sources */,
 				37C8F9001E6300B600469748 /* RibbonController.swift in Sources */,
 				379970DC1E5B53060086B3D9 /* MainWindowController.swift in Sources */,
+				3799F7171E67C4CA00F83D1D /* MWContext.swift in Sources */,
 				379970B11E5AF6BE0086B3D9 /* ViewController.swift in Sources */,
 				377339401E5C713200426E14 /* MainContainer.swift in Sources */,
 				379970AF1E5AF6BE0086B3D9 /* AppDelegate.swift in Sources */,
@@ -510,6 +534,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KTC4CKXCX9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iWiki",
+				);
 				INFOPLIST_FILE = AutoWikiBrowser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DLP.AutoWikiBrowser;
@@ -525,6 +553,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KTC4CKXCX9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iWiki",
+				);
 				INFOPLIST_FILE = AutoWikiBrowser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DLP.AutoWikiBrowser;

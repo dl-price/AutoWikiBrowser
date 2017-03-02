@@ -9,6 +9,7 @@
 
 import Foundation
 import CoreData
+import PromiseKit
 
 
 public class MWInstance: NSManagedObject {
@@ -52,6 +53,31 @@ public class MWInstance: NSManagedObject {
     
     public class func newFetchRequest() -> NSFetchRequest<MWInstance> {
         return NSFetchRequest<MWInstance>(entityName: "MWInstance");
+    }
+    
+    public func performQuery(withQueryItems queryItems: [URLQueryItem], andPostBody postBody: String? = nil) -> Promise<MWReturn> {
+        var partUrl = URLComponents(url: rootURL!.absoluteURL!, resolvingAgainstBaseURL: false)
+        partUrl?.queryItems = queryItems
+        
+        var request : URLRequest = URLRequest(url: (partUrl?.url!)!)
+        
+        if let _ = postBody {
+            request.httpMethod = "POST"
+            request.httpBody = postBody!.data(using: .utf8)
+        }
+        
+        return Promise { fulfill, reject in
+            let task = session.dataTask(with: request, completionHandler: {(data, response, error) in
+                if let _ = error {
+                    return reject(error!)
+                }
+                fulfill(MWReturn(data!))
+            })
+            
+            task.resume()
+        }
+        
+        
     }
 
 }
