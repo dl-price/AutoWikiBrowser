@@ -16,6 +16,7 @@ class MediaWiki {
         self.url = url
     }
     
-    public func performRequest() {
+    public func performRequest(req: Request) -> DataRequest {
+        return Alamofire.request(url, method: req.method, parameters: req.parameters, encoding: URLEncoding.default, headers: nil)
     }
 }

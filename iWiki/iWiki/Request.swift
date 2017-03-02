@@ -7,7 +7,14 @@
 //
 
 import Foundation
+import Alamofire
 
 class Request {
-    var parameters = Dictionary<String, String>()
+    public var parameters : Dictionary<String, String> {
+            return extraParams
+    }
+    public var extraParams = Dictionary<String, String>()
+    public var method : HTTPMethod = .get
 }
+
+
